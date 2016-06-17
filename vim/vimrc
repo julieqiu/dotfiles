@@ -95,9 +95,9 @@ nnoremap k gk
 
 
 " Settings: Mouse & Scrolling
-set mouse=nirc
-noremap! <LeftDrag> <nop>
-noremap <LeftDrag> <nop>
+set mouse=n
+"noremap! <LeftDrag> <nop>
+"noremap <LeftDrag> <nop>
 nnoremap <2-LeftMouse> <nop>
 inoremap <2-LeftMouse> <nop>
 vnoremap <2-LeftMouse> <nop>
