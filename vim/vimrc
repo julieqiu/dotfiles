@@ -40,7 +40,7 @@ nnoremap ; :
 highlight ColorColumn ctermfg=Red
 match ColorColumn /\%81v.\+/
 set textwidth=79
-
+set clipboard=unnamed
 
 " Settings: Color Scheme
 set background=dark
@@ -58,10 +58,23 @@ set cursorline          " highlight current line
 set lazyredraw          " redraw only when we need to.
 set nowrap              " don't wrap lines
 set number              " show line numbers
+set relativenumber      " show relative numbers
 set showcmd             " show command in bottom bar
 set showmatch           " show matching parenthesis
 set ruler
 
+" Number Toggle between Relative and Absolute Numbers
+au FocusLost * :set number
+au FocusGained * :set relativenumber
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+nnoremap <leader>n :call NumberToggle()<CR>
 
 " Suppose I have a really long comment and it's way too long and we want to
 " make it multiline.  But this should be on the same line.
@@ -81,7 +94,6 @@ nnoremap ,rs  :resize
 nnoremap ,vrs :vertical resize
 nnoremap <C-a> <S-^>
 nnoremap <C-e> <S-$>
-nnoremap <leader>n :set nonumber! <CR>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -109,6 +121,10 @@ nnoremap <Down> <C-e>
 
 " Switch to paste mode if you're getting autoindent problems.
 nmap <Leader>p :set paste!<CR>:set paste?<CR>
+
+
+" Settings: Go
+let g:go_fmt_command = "goimports"
 
 
 " Settings: Ctrl-P
@@ -181,7 +197,7 @@ nnoremap <leader>q  :bp <BAR> bd #<CR>
 nnoremap <leader>bw :bw <BAR> bw #<CR>
 nnoremap <leader>T :enew<cr>
 " Edit Buffers
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :w<CR><CR>
 nnoremap <leader>e :edit<Space>
 nnoremap :w :w<CR>
 " Prints a numbered list of filenames when F5 is pressed
