@@ -3,7 +3,6 @@ source ~/.bash_profile
 # Go Path
 export PATH=$PATH:$HOME/code/go/bin
 export PATH=$HOME/code/arcanist/bin:$PATH
-source /Users/julie/zsh-history-substring-search/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Source iterm2 login
 autoload run-help
@@ -13,10 +12,6 @@ HELPDIR=/usr/local/share/zsh/help
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
-# Source Secrets
-source ~/.SECRET
-
 
 # Vim Bindings
 unsetopt CORRECT                      # Disable autocorrect guesses. Happens when typing a wrong
@@ -46,6 +41,13 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey -v
 
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
 # Go
 export EDITOR="vim"
 export VISUAL="vim"
@@ -56,6 +58,8 @@ export ENVIRONMENT="dev"
 
 export movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
 export POSTGRES_PASSWORD="12341234"
+
+export GOPATH="$HOME/code/go:/Users/julie/code/branded/go:/usr/local/Cellar/go/1.6.2/libexec"
 
 alias ll="ls -lah"
 alias la="ls -A"

@@ -1,6 +1,4 @@
-if &compatible
-  set nocompatible
-endif
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -11,13 +9,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" Plugins
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -26,6 +17,10 @@ Plugin 'fatih/vim-go'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on
+
 
 " My stuff
 
