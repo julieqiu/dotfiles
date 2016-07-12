@@ -1,30 +1,31 @@
 if &compatible
   set nocompatible
 endif
+filetype off                  " required
 
-" Required:
-set runtimepath^=/Users/julie/.vim/repos/github.com/Shougo/dein.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Required:
-call dein#begin(expand('/Users/julie/.vim'))
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-call dein#add('Shougo/dein.vim')
-call dein#add('altercation/vim-colors-solarized')
-call dein#add('bling/vim-airline')
-call dein#add('ctrlpvim/ctrlp.vim')
-call dein#add('ervandew/supertab')
-call dein#add('fatih/vim-go')
-call dein#add('rking/ag.vim')
-call dein#add('scrooloose/nerdtree')
-call dein#add('tpope/vim-surround')
+" Plugins
 
-call dein#end()
 
-filetype plugin indent on
-
-if dein#check_install()
-  call dein#install()
-endif
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'fatih/vim-go'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
 
 " My stuff
 

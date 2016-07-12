@@ -1,3 +1,5 @@
+source ~/.bash_profile
+
 # Go Path
 export PATH=$PATH:$HOME/code/go/bin
 export PATH=$HOME/code/arcanist/bin:$PATH
@@ -55,15 +57,6 @@ export ENVIRONMENT="dev"
 export movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
 export POSTGRES_PASSWORD="12341234"
 
-export GOPATH="$HOME/code/go:/Users/julie/code/branded/go:/usr/local/Cellar/go/1.6.2/libexec"
-
-
-export RBENV_ROOT=~/.rbenv
-export PATH=$RBENV_ROOT/bin:$PATH
-eval "$(rbenv init -)"
-export NVM_DIR=/Users/julie/.nvm
-source /usr/local/opt/nvm/nvm.sh
-
 alias ll="ls -lah"
 alias la="ls -A"
 alias c='clear'
@@ -118,7 +111,9 @@ alias vinstall="vim +PluginInstall +qall"
 bindkey -e
 
 alias ad="arc diff --nounit"
+alias al="git fetch; git rebase origin/master; arc land"
 alias adu="arc diff --update --nounit"
+alias adm="arc diff --base git:origin/master"
 alias psqlbd="psql branded_dev"
 alias psqlbt="psql branded_test"
 alias psqled="psql echub_dev"
@@ -164,3 +159,7 @@ function regold {
         tools/regold.sh jello/vfe/sapi -test.run=$1
         popd
 }
+
+zmodload zsh/terminfo
+bindkey "$terminfo[cuu1]" history-substring-search-up
+bindkey "$terminfo[cud1]" history-substring-search-down
