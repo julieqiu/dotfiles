@@ -126,7 +126,7 @@ nmap <Leader>p :set paste!<CR>:set paste?<CR>
 
 " Settings: Go
 let g:go_fmt_command = "goimports"
-
+nnoremap <leader>r :GoReferrers<CR>
 
 " Settings: Ctrl-P
 let g:ctrlp_map = '<c-p>'

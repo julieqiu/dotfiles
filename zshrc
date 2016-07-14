@@ -106,6 +106,7 @@ alias gc="git checkout"
 alias gcp="git cherry-pick"
 alias gpull='git pull; git remote prune origin; migr;'
 
+alias ff="find . | ag"
 
 alias vinstall="vim +PluginInstall +qall"
 bindkey -e
