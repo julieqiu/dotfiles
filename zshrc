@@ -95,6 +95,7 @@ alias ga="git add"
 alias gaa="git add -u"
 alias gm="git commit"
 alias gmm="git commit -m"
+alias wip="git add .; git commit -m \"work in progress\""
 alias gma="git commit --amend"
 alias gf="git fetch"
 alias gr="git rebase"
@@ -141,7 +142,8 @@ alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 # Go Test Aliases
 alias gog="go get"
 alias gor="go run"
-alias got="go test -v"
+alias got="go test -run"
+alias gotv="go test -v -run"
 alias gotjm="go test jello/models -v"
 alias gotr="go test -run -v"
 
@@ -166,5 +168,34 @@ function regold {
 }
 
 zmodload zsh/terminfo
-bindkey "$terminfo[cuu1]" history-substring-search-up
-bindkey "$terminfo[cud1]" history-substring-search-down
+
+# search for processes by name
+alias procs="ps -ef | grep"
+
+# play a sound
+alias sound='afplay /System/Library/Sounds/Ping.aiff'
+
+# open all config files
+alias config='subl ~/.bash_profile ~/.bash_aliases ~/.work_profile ~/.work_aliases ~/.gitconfig'
+
+# source bash profile
+alias src='source ~/.bash_profile'
+
+# commit as a wip
+alias wip='g a && g cm "wip"'
+
+# ...and check out master
+alias wipco='g a && g cm "wip" && g co master'
+
+# commit current work as wip, update master, switch back to old branch and rebase
+alias rebm='wipco && g pullom && g co - && g rebasem && g reset head~'
+
+# url encode and decode
+alias urlenc='urlencode'
+alias urldec='urldecode'
+
+# copy a safety pig to your clipboard
+alias pig='safetypig'
+
+# restart clipboard if it's being a jerk
+alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
