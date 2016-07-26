@@ -59,7 +59,8 @@ export ENVIRONMENT="dev"
 export movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
 export POSTGRES_PASSWORD="12341234"
 
-export GOPATH="$HOME/code/go:/Users/julie/code/branded/go:/usr/local/Cellar/go/1.6.2/libexec"
+# GOPATH="/Users/julie/code/branded/go:$HOME/code/go:/usr/local/Cellar/go/1.6.2/libexec"
+export GOPATH="/Users/julie/code/branded/go:$HOME/code/go:/usr/local/Cellar/go/1.6.2/libexec"
 
 alias ll="ls -lah"
 alias la="ls -A"
@@ -95,7 +96,8 @@ alias ga="git add"
 alias gaa="git add -u"
 alias gm="git commit"
 alias gmm="git commit -m"
-alias wip="git add .; git commit -m \"work in progress\""
+alias wip="gaa; git commit -m 'work in progress'"
+
 alias gma="git commit --amend"
 alias gf="git fetch"
 alias gr="git rebase"
@@ -116,7 +118,8 @@ alias ff="find . | ag"
 alias vinstall="vim +PluginInstall +qall"
 bindkey -e
 
-alias ad="arc diff --nounit"
+alias ad="arc diff"
+alias adnu="arc diff --nounit"
 alias al="git fetch; git rebase origin/master; arc land"
 alias adu="arc diff --update --nounit"
 alias adm="arc diff --base git:origin/master"
@@ -142,6 +145,7 @@ alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 # Go Test Aliases
 alias gog="go get"
 alias gor="go run"
+alias gota="go test"
 alias got="go test -run"
 alias gotv="go test -v -run"
 alias gotjm="go test jello/models -v"
@@ -181,14 +185,6 @@ alias config='subl ~/.bash_profile ~/.bash_aliases ~/.work_profile ~/.work_alias
 # source bash profile
 alias src='source ~/.bash_profile'
 
-# commit as a wip
-alias wip='g a && g cm "wip"'
-
-# ...and check out master
-alias wipco='g a && g cm "wip" && g co master'
-
-# commit current work as wip, update master, switch back to old branch and rebase
-alias rebm='wipco && g pullom && g co - && g rebasem && g reset head~'
 
 # url encode and decode
 alias urlenc='urlencode'
@@ -199,3 +195,24 @@ alias pig='safetypig'
 
 # restart clipboard if it's being a jerk
 alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# Fix elastic search
+alias elasticsearch="b; ./tools/start_elasticsearch.sh --recreate"
+
+# Regold
+function elasticsearch2 {
+    eval "$(${HOME}/code/branded/tools/run_docker_machine.sh)"
+    curl -XPUT "${DOCKER_HOST_IP}:9200/products_*/_alias/products"
+}
