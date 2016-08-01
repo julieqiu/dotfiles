@@ -1,9 +1,5 @@
 source ~/.bash_profile
 
-# Go Path
-export PATH=$PATH:$HOME/code/go/bin
-export PATH=$HOME/code/arcanist/bin:$PATH
-
 # Source iterm2 login
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
@@ -69,8 +65,6 @@ alias ag='ag --path-to-agignore=~/.agignore'
 
 alias desktop='cd ~/Desktop'
 
-alias vi='mvim -v'
-alias vim='mvim -v'
 alias szsh='source ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias vzsh='vim ~/.zshrc'
@@ -96,7 +90,7 @@ alias ga="git add"
 alias gaa="git add -u"
 alias gm="git commit"
 alias gmm="git commit -m"
-alias wip="gaa; git commit -m 'work in progress'"
+alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
 
 alias gma="git commit --amend"
 alias gf="git fetch"
@@ -112,6 +106,7 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gcp="git cherry-pick"
 alias gpull='git pull; git remote prune origin; migr;'
+alias gd='git diff'
 
 alias ff="find . | ag"
 
@@ -121,7 +116,7 @@ bindkey -e
 alias ad="arc diff"
 alias adnu="arc diff --nounit"
 alias al="git fetch; git rebase origin/master; arc land"
-alias adu="arc diff --update --nounit"
+alias adu="arc diff --update"
 alias adm="arc diff --base git:origin/master"
 alias psqlbd="psql branded_dev"
 alias psqlbt="psql branded_test"
@@ -162,12 +157,12 @@ alias echwork="go run go/src/jello/integrations/echub_worker/echub_worker.go"
 # Remove swp files
 alias rmswp='find . -name ".*.swp" -type f -delete; find . -name "*~" -type f -delete'
 # Remove tmp files
-alias rmtmp='find . -name "tmp*.txt" -type f -delete; find . -name "*~" -type f -delete'
+alias rmtmp='find . -name "*tmp*.txt" -type f -delete; find . -name "*~" -type f -delete'
 
 # Regold
 function regold {
         pushd ~/code/branded/
-        tools/regold.sh jello/vfe/sapi -test.run=$1
+        tools/regold.sh -a
         popd
 }
 
@@ -215,4 +210,17 @@ alias elasticsearch="b; ./tools/start_elasticsearch.sh --recreate"
 function elasticsearch2 {
     eval "$(${HOME}/code/branded/tools/run_docker_machine.sh)"
     curl -XPUT "${DOCKER_HOST_IP}:9200/products_*/_alias/products"
+}
+
+# Pipe tests into tmp files
+function gott {
+    name=tmp
+    if [[ -e $name.txt ]] ; then
+        i=1
+        while [[ -e $i$name.txt ]] ; do
+            let i++
+        done
+        name=$i$name
+    fi
+    gotv $1 > $name.txt
 }
