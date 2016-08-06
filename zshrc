@@ -1,4 +1,6 @@
+# PATH
 source ~/.bash_profile
+export PATH=/Library/PostgreSQL/9.3/bin:$PATH
 
 # Source iterm2 login
 autoload run-help
@@ -55,8 +57,11 @@ export ENVIRONMENT="dev"
 export movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
 export POSTGRES_PASSWORD="12341234"
 
+<<<<<<< HEAD
 # GOPATH="/Users/julie/code/branded/go:$HOME/code/go:/usr/local/Cellar/go/1.6.2/libexec"
 export GOPATH="/Users/julie/code/branded/go:$HOME/code/go:/usr/local/Cellar/go/1.6.2/libexec"
+=======
+>>>>>>> 666e86a... paths
 
 alias ll="ls -lah"
 alias la="ls -A"
@@ -69,19 +74,24 @@ alias szsh='source ~/.zshrc'
 alias vimrc='vim ~/.vimrc'
 alias vzsh='vim ~/.zshrc'
 
+# alias BGOPATH="GOPATH=$HOME/code/branded/go:$HOME/code/go:/usr/local/go/bin/go;"
+# alias JGOPATH="GOPATH=$HOME/code/julie/go:$HOME/code/go:/usr/local/go/bin/go;"
+# alias gobin="GOBIN=/usr/local/go/bin/go/bin"
+
 alias code="cd ~/code"
+alias j="cd ~/code/julie"
+alias i="cd ~/code/julie/go/src/github.com/julieqiu/inspiration"
+alias jgo="i"
+
 alias b="cd ~/code/branded"
+alias jello="cd ~/code/branded/go/src/jello"
+alias bgo="jello"
+alias bgom="jello; cd ./models;"
 alias bios="cd ~/code/branded/ios"
 alias bjs="cd ~/code/branded/js"
-alias bgo="cd ~/code/branded/go/src/jello"
-alias jello="cd ~/code/branded/go/src/jello"
-alias bgom="cd ~/code/branded/go/src/jello/models"
 alias bops="cd ~/code/branded/ops"
 alias bpy="cd ~/code/branded/python"
 alias btools="cd ~/code/branded/tools"
-
-alias jl="cd ~/code/branded/go/src/jello"
-alias jlm="cd ~/code/branded/go/src/jello/models"
 
 alias migr='~/code/branded/tools/migrate_dev.sh'
 
@@ -191,6 +201,10 @@ alias pig='safetypig'
 # restart clipboard if it's being a jerk
 alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
 
+<<<<<<< HEAD
+=======
+# zsh search setup
+>>>>>>> 666e86a... paths
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
@@ -202,6 +216,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+<<<<<<< HEAD
 
 # Fix elastic search
 alias elasticsearch="b; ./tools/start_elasticsearch.sh --recreate"
@@ -224,3 +239,5 @@ function gott {
     fi
     gotv $1 > $name.txt
 }
+=======
+>>>>>>> 666e86a... paths
