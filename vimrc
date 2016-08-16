@@ -18,6 +18,7 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'klen/python-mode'
+Plugin 'nvie/vim-flake8'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
@@ -223,4 +224,8 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabCrMapping = 1
 " Let me continue typing for autocomplete
 set completeopt=longest,menuone
+let g:omni_sql_no_default_maps = 1
 
+" vim swap files make crontab unhappy. This allows `crontab -e` to work
+" correctly.
+autocmd filetype crontab setlocal nobackup nowritebackup
