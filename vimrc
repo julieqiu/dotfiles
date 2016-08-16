@@ -17,6 +17,7 @@ Plugin 'fatih/vim-go'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
+Plugin 'klen/python-mode'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
@@ -118,10 +119,6 @@ nnoremap <Down> <C-e>
 " Switch to paste mode if you're getting autoindent problems.
 nmap <Leader>p :set paste!<CR>:set paste?<CR>
 
-
-" Settings: Go
-let g:go_fmt_command = "goimports"
-nnoremap <leader>r :GoReferrers<CR>
 
 " Settings: Ctrl-P
 let g:ctrlp_map = '<c-p>'
@@ -227,8 +224,3 @@ let g:SuperTabCrMapping = 1
 " Let me continue typing for autocomplete
 set completeopt=longest,menuone
 
-
-
-" vim swap files make crontab unhappy. This allows `crontab -e` to work
-" correctly.
-autocmd filetype crontab setlocal nobackup nowritebackup
