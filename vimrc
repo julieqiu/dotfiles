@@ -57,7 +57,16 @@ set background=dark
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
 colorscheme solarized
+set t_Co=256            " 256 colors
 
+set wildmenu
+" highlight Normal guibg=black ctermbg=black ctermfg=white
+
+" Remove menu bar
+set guioptions-=m
+
+" Remove toolbar
+set guioptions-=T
 
 " Settings: Remove trailing whitespace
  autocmd BufWritePre * :%s/\s\+$//e
@@ -117,7 +126,7 @@ nnoremap k gk
 
 
 " Settings: Mouse & Scrolling
-set mouse=n
+set mouse=a
 "noremap! <LeftDrag> <nop>
 "noremap <LeftDrag> <nop>
 nnoremap <2-LeftMouse> <nop>
@@ -174,6 +183,7 @@ set shiftround
 
 " Settings: Search
 set hlsearch
+set incsearch
 nmap <silent> ,/ :nohlsearch<CR>
 						" clears search buffer with ,/
 nnoremap <leader><space> :nohlsearch<CR>
@@ -241,3 +251,17 @@ let g:omni_sql_no_default_maps = 1
 " vim swap files make crontab unhappy. This allows `crontab -e` to work
 " correctly.
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+" don't use spaces for makefiles
+autocmd FileType make set noexpandtab
+
+" set html tab-width to 2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
+" set javascript tab-width to 2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+" set css tab-width to 2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+autocmd FileType sass setlocal shiftwidth=2 tabstop=2
