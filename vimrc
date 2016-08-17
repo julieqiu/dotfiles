@@ -14,31 +14,20 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
-Plugin 'klen/python-mode'
-Plugin 'nvie/vim-flake8'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-
+Plugin 'klen/python-mode'
+Plugin 'nvie/vim-flake8'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call vundle#end()            " required
+filetype plugin indent on
+
 
 " My stuff
 
 " Settings: General
+filetype plugin indent on
 syntax on
 syntax enable           " enable syntax processing
 let mapleader = "\<Space>"
@@ -49,7 +38,6 @@ nnoremap ; :
 highlight ColorColumn ctermfg=Red
 match ColorColumn /\%81v.\+/
 set textwidth=79
-" make yank and paste use the clipboard
 set clipboard=unnamed
 
 " Settings: Color Scheme
@@ -61,14 +49,6 @@ colorscheme solarized
 
 " Settings: Remove trailing whitespace
  autocmd BufWritePre * :%s/\s\+$//e
-" highlight trailing whitespace characters
-" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
 
 
 " Settings: Display
@@ -125,7 +105,7 @@ nnoremap k gk
 
 
 " Settings: Mouse & Scrolling
-set mouse=a
+set mouse=n
 "noremap! <LeftDrag> <nop>
 "noremap <LeftDrag> <nop>
 nnoremap <2-LeftMouse> <nop>
@@ -145,10 +125,8 @@ nmap <Leader>p :set paste!<CR>:set paste?<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 " Ignore stuff with ctrl-p
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|DS_Store\|(\.(swp|ico|git|svn))$'
-"CtrlP settings to make it find all files
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
+
 
 " Settings: NERDTree
 nmap <C-t> :NERDTreeToggle <CR>
@@ -184,7 +162,6 @@ set shiftround
 
 " Settings: Search
 set hlsearch
-set incsearch
 nmap <silent> ,/ :nohlsearch<CR>
 						" clears search buffer with ,/
 nnoremap <leader><space> :nohlsearch<CR>
@@ -194,7 +171,7 @@ set nostartofline
 			" Stop certain movements from
 			" always going to the first character of a line.
 set ignorecase
-set smartcase " smart search (override 'ignorecase' when pattern has uppers)
+set smartcase
 
 
 
@@ -252,31 +229,3 @@ let g:omni_sql_no_default_maps = 1
 " vim swap files make crontab unhappy. This allows `crontab -e` to work
 " correctly.
 autocmd filetype crontab setlocal nobackup nowritebackup
-
-" 256 colors
-set t_Co=256
-
-set wildmenu
-highlight Normal guibg=black ctermbg=black ctermfg=white
-
-" Remove menu bar
-set guioptions-=m
-
-" Remove toolbar
-set guioptions-=T
-
-" don't use spaces for makefiles
-autocmd FileType make set noexpandtab
-
-" set html tab-width to 2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-
-" set javascript tab-width to 2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-
-" set css tab-width to 2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-autocmd FileType sass setlocal shiftwidth=2 tabstop=2
-" less-css syntax highlighting
-au BufNewFile,BufRead *.less set filetype=less
