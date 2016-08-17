@@ -155,6 +155,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 " Ignore stuff with ctrl-p
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
+"CtrlP settings to make it find all files
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|git|svn))$'
 
 
 " Settings: NERDTree
