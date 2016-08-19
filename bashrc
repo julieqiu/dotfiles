@@ -50,14 +50,13 @@ alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
 
 
 
-
-
 ### ~~~ ARCANIST ~~~ ###
 alias ad="arc diff"
 alias adnu="arc diff --nounit"
 alias al="git fetch; git rebase origin/master; arc land"
 alias adu="arc diff --update"
 alias adm="arc diff --base git:origin/master"
+alias adpc="arc diff --plan-changes"
 
 
 
@@ -130,7 +129,9 @@ alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 # Fix elastic search
 alias elasticsearch="b; ./tools/start_elasticsearch.sh --recreate"
 
-### ~~~ Random
+
+
+### ~~~ RANDOM ~~~ ###
 alias movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
 # search for processes by name
 alias procs="ps -ef | ag"

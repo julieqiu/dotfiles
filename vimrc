@@ -280,4 +280,3 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 
 " less-css syntax highlighting
 au BufNewFile,BufRead *.less set filetype=less
-
