@@ -14,13 +14,16 @@ alias c='clear'
 alias ag='ag --path-to-agignore=~/.agignore'
 
 
+### ~~~ VIM TOOLS ~~~ ###
+alias vi='vim'
+alias vim='mvim'
 
 ### ~~~ CONFIG FILES ~~~ ###
 alias szsh='source ~/.zshrc'
-alias vimrc='vim ~/.vimrc'
-alias bashrc='vim ~/.bashrc'
-alias vzsh='vim ~/.zshrc'
-alias vinstall="vim +PluginInstall +qall"
+alias vimrc='mvim ~/.vimrc'
+alias bashrc='mvim ~/.bashrc'
+alias vzsh='mvim ~/.zshrc'
+alias vinstall="mvim +PluginInstall +qall"
 
 
 

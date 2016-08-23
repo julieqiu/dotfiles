@@ -14,8 +14,8 @@ source ~/.bashrc
 # Export
 export PATH=/Library/PostgreSQL/9.3/bin:$PATH
 export KETTIMEOUT=1
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="mvim"
+export VISUAL="mvim"
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export PGHOST=localhost
 export ENVIRONMENT="dev"

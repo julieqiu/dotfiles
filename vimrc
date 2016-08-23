@@ -14,12 +14,13 @@ Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'klen/python-mode'
 Plugin 'nvie/vim-flake8'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
@@ -165,6 +166,13 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|
 nmap <C-t> :NERDTreeToggle <CR>
 
 
+" Settings: Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
 " Plugin Settings: Silver Searcher
 nnoremap \ :Ag<SPACE>
 let g:ackprg = 'ag --vimgrep'
@@ -280,3 +288,6 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 
 " less-css syntax highlighting
 au BufNewFile,BufRead *.less set filetype=less
+
+set gfn=Monaco:h18
+set noswapfile
