@@ -26,7 +26,6 @@ alias vzsh='mvim ~/.zshrc'
 alias vinstall="mvim +PluginInstall +qall"
 
 
-
 # Git Commands
 alias ga="git add"
 alias gaa="git add -u"

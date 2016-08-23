@@ -12,15 +12,17 @@ source ~/.bash_profile
 source ~/.bashrc
 
 # Export
-export PATH=/Library/PostgreSQL/9.3/bin:$PATH
 export KETTIMEOUT=1
-export EDITOR="mvim"
-export VISUAL="mvim"
+export EDITOR="vim"
+export GIT_EDITOR='vim'
+export VISUAL="vim"
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export PGHOST=localhost
 export ENVIRONMENT="dev"
 export POSTGRES_PASSWORD="12341234"
 export GOPATH="/Users/julie/code/branded/go:$HOME/code/go:/usr/local/Cellar/go/1.6.2/libexec"
+export PATH=$PATH/Library/PostgreSQL/9.3/bin
+export PATH=$PATH/usr/local/bin:/usr/local/sbin # this makes Github OSX work with commit hooks
 
 # Source iterm2 login
 autoload run-help

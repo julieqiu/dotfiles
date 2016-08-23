@@ -19,6 +19,7 @@ Plugin 'klen/python-mode'
 Plugin 'nvie/vim-flake8'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'solarnz/arcanist.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 " All of your Plugins must be added before the following line
@@ -52,6 +53,7 @@ highlight ColorColumn ctermfg=Red
 match ColorColumn /\%81v.\+/
 set textwidth=79
 set clipboard=unnamed
+set noswapfile
 
 " Settings: Color Scheme
 set background=dark
@@ -290,4 +292,3 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 au BufNewFile,BufRead *.less set filetype=less
 
 set gfn=Monaco:h18
-set noswapfile
