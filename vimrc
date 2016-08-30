@@ -165,7 +165,7 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|
 
 
 " Settings: NERDTree
-nmap <C-t> :NERDTreeToggle <CR>
+nmap <C-n> :NERDTreeToggle <CR>
 
 
 " Settings: Rainbow Parentheses

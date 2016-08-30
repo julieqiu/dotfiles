@@ -20,10 +20,10 @@ alias vim='mvim'
 
 ### ~~~ CONFIG FILES ~~~ ###
 alias szsh='source ~/.zshrc'
-alias vimrc='mvim ~/.vimrc'
-alias bashrc='mvim ~/.bashrc'
-alias vzsh='mvim ~/.zshrc'
-alias vinstall="mvim +PluginInstall +qall"
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+alias vzsh='vim ~/.zshrc'
+alias vinstall="vim +PluginInstall +qall"
 
 
 # Git Commands
@@ -105,14 +105,14 @@ alias psqlbt="psql branded_test"
 alias psqled="psql echub_dev"
 alias psqlet="psql echub_test"
 ### ~~~ SPRING REMOTE DATABASES ~~~ ###
-alias 4rbr="./tools/read_only_db.sh branded"
-alias 4rec="./tools/read_only_db.sh echub"
-alias 4rec-write="./tools/psql_remote_db.sh service 4real-echub"
-alias 4rbr-write="./tools/psql_remote_db.sh service 4real-vfe"
-alias devb="./tools/psql_remote_db.sh service dev-vfe"
-alias deve="./tools/psql_remote_db.sh service dev-echub"
-alias demb="./tools/psql_remote_db.sh service demo-vfe"
-alias deme="./tools/psql_remote_db.sh service demo-echub"
+alias 4rbr="~/code/branded/tools/read_only_db.sh branded"
+alias 4rec="~/code/branded/tools/read_only_db.sh echub"
+alias 4rec-write="~/code/branded/tools/psql_remote_db.sh service 4real-echub"
+alias 4rbr-write="~/code/branded/tools/psql_remote_db.sh service 4real-vfe"
+alias devb="~/code/branded/tools/psql_remote_db.sh service dev-vfe"
+alias deve="~/code/branded/tools/psql_remote_db.sh service dev-echub"
+alias demb="~/code/branded/tools/psql_remote_db.sh service demo-vfe"
+alias deme="~/code/branded/tools/psql_remote_db.sh service demo-echub"
 alias redshift='PGPASSWORD=$DB_REDSHIFT_PASSWORD psql -h spring.cminumodijif.us-east-1.redshift.amazonaws.com -U $DB_REDSHIFT_USER -p5439 for_real'
 ### ~~~ SPRING SERVERS ~~~ ###
 alias sfe="$HOME/code/branded/tools/run_sfe.sh"
@@ -130,7 +130,7 @@ alias omgwtf="killall {vfe,sfe,echub,fswatch,xfe}{,_test}"
 alias fixpsql="/usr/local/opt/postgresql93/bin/postgres -D /usr/local/var/postgres -r /usr/local/var/postgres/server.log"
 alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log restart"
 # Fix elastic search
-alias elasticsearch="b; ./tools/start_elasticsearch.sh --recreate"
+alias elasticsearch="b; ~/code/branded/tools/start_elasticsearch.sh --recreate"
 
 
 
