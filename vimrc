@@ -12,7 +12,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'klen/python-mode'
@@ -54,6 +53,7 @@ match ColorColumn /\%81v.\+/
 set textwidth=79
 set clipboard=unnamed
 set noswapfile
+imap <C-q> <Esc>
 
 " Settings: Color Scheme
 set background=dark
@@ -106,9 +106,6 @@ endfunc
 
 nnoremap <leader>n :call NumberToggle()<CR>
 
-" Suppose I have a really long comment and it's way too long and we want to
-" make it multiline.  But this should be on the same line.
-
 " Settings: Navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -124,14 +121,6 @@ nnoremap ,rs  :resize
 nnoremap ,vrs :vertical resize
 nnoremap <C-a> <S-^>
 nnoremap <C-e> <S-$>
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
@@ -262,13 +251,14 @@ nnoremap <Leader>0 :10b<CR>
 " Show the buffer number in the status line.
 set laststatus=2
 
-" supertab should use omnicomplete
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-" supertab should finish autocomplete when enter is hit
-let g:SuperTabCrMapping = 1
-" Let me continue typing for autocomplete
-set completeopt=longest,menuone
-let g:omni_sql_no_default_maps = 1
+
+" " supertab should use omnicomplete
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" " supertab should finish autocomplete when enter is hit
+" let g:SuperTabCrMapping = 1
+" " Let me continue typing for autocomplete
+" set completeopt=longest,menuone
+" let g:omni_sql_no_default_maps = 1
 
 " vim swap files make crontab unhappy. This allows `crontab -e` to work
 " correctly.
