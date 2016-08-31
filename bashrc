@@ -98,7 +98,12 @@ alias jlm="cd ~/code/branded/go/src/jello/models"
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
 ### ~~~ SPRING MIGRATE ~~~ ###
-alias migr='~/code/branded/tools/migrate_dev.sh'
+# Regold
+function migr {
+        pushd ~/code/branded/
+        tools/migrate_dev.sh
+        popd
+}
 ### ~~ SPRING LOCAL DATABASES ~~~ ###
 alias psqlbd="psql branded_dev"
 alias psqlbt="psql branded_test"
