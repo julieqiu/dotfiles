@@ -21,8 +21,9 @@ export PGHOST=localhost
 export ENVIRONMENT="dev"
 export POSTGRES_PASSWORD="12341234"
 export GOPATH="/Users/julie/code/branded/go:$HOME/code/go:/usr/local/Cellar/go/1.6.2/libexec"
-export PATH=$PATH/Library/PostgreSQL/9.3/bin
-export PATH=$PATH/usr/local/bin:/usr/local/sbin # this makes Github OSX work with commit hooks
+export PATH=$PATH:/Library/PostgreSQL/9.3/bin:/usr/local/bin/git:/usr/local/bin/gofmt # this makes Github OSX work with commit hooks
+export PYTHONPATH="/Users/julie/code/branded/python"
+
 
 # Source iterm2 login
 autoload run-help
