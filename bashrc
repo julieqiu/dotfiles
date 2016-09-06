@@ -108,12 +108,19 @@ function regold {
 }
 ### ~~~ SPRING COPY 4REAL THINGS ~~~ ###
 function copy_vendor {
-    ~/code/branded/tools/sql/copiers/copy_vendor.py --dest_env=${2:-local}
-    ${3:-4real} ${4:---write} $1
+    ~/code/branded/tools/sql/copiers/copy_vendor.py \
+        ${2:-4real} \
+        --dest_env=${3:-local} \
+        ${4:---write} \
+        $1
 }
 function copy_product {
-    ~/code/branded/tools/sql/copiers/copy_product.py --dest_vendor_id=$2
-    --dest_env=${3:-local} ${4:-4real} ${5:---write} $1
+    ~/code/branded/tools/sql/copiers/copy_product.py \
+        ${3:-4real} \
+        --dest_vendor_id=$2 \
+        --dest_env=${4:-local} \
+        ${5:---write} \
+        $1
 }
 ### ~~ SPRING LOCAL DATABASES ~~~ ###
 alias psqlbd="psql branded_dev"
@@ -134,6 +141,7 @@ alias redshift='PGPASSWORD=$DB_REDSHIFT_PASSWORD psql -h spring.cminumodijif.us-
 alias sfe="$HOME/code/branded/tools/run_sfe.sh"
 alias vfe="$HOME/code/branded/tools/run_vfe.sh"
 alias xfe="$HOME/code/branded/tools/run_xfe.sh"
+alias echub="$HOME/code/branded/tools/run_echub.sh"
 alias osu="./tools/run_osu.sh -runOnly=order_status"
 
 alias brwork="go run go/src/jello/branded_worker/branded_worker.go"
