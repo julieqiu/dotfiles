@@ -122,6 +122,13 @@ function copy_product {
         ${5:---write} \
         $1
 }
+function in4r {
+    if [[ $(git tag --contains $1 | grep "^4real") ]]; then
+        echo "yeppers"
+    else
+        echo "nope"
+    fi
+}
 ### ~~ SPRING LOCAL DATABASES ~~~ ###
 alias psqlbd="psql branded_dev"
 alias psqlbt="psql branded_test"
