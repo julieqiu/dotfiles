@@ -29,6 +29,7 @@ alias vinstall="vim +PluginInstall +qall"
 # Git Commands
 alias gaa="git add -u"
 alias gb="git branch"
+alias grn="git branch -m"
 alias gc="git checkout"
 alias gcp="git cherry-pick"
 alias gd='git diff'
@@ -51,6 +52,7 @@ alias grom="git rebase origin/master"
 alias grs="git rebase --skip"
 alias gs="git status"
 alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
+alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
 
 
 
@@ -86,6 +88,8 @@ alias b="cd ~/code/branded/"
 alias bgo="jello"
 alias bgom="jello; cd ./models;"
 alias bgomp="cd ~/code/branded/go/src/jello/models/product_merge"
+alias bgosu="cd ~/code/branded/go/src/jello/integrations/osu"
+alias bgosuj="bgosu; cd jobs"
 alias bios="cd ~/code/branded/ios"
 alias bjs="cd ~/code/branded/js"
 alias bops="cd ~/code/branded/ops"
