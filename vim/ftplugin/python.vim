@@ -17,4 +17,4 @@ set fileformat=unix
 " let g:pymode_doc_bind = "<C-S-h>"
 " let g:SimpylFold_fold_import = 0
 
-call Flake8()
+" call Flake8()
