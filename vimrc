@@ -159,6 +159,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|git|svn))$'
+nnoremap <C-b> :CtrlPBuffer <CR>
 
 
 " Settings: NERDTree
@@ -243,7 +244,6 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " \b \f \g : go back/forward/last-used
 nnoremap <Leader>[ :bp<CR>
 nnoremap <Leader>] :bn<CR>
-nnoremap <Leader>b :e#<CR>
 " Jump to Buffer Number
 " \1 \2 \3 : go to buffer 1/2/3 etc
 nnoremap <Leader>1 :1b<CR>
