@@ -85,46 +85,48 @@ alias desktop='cd ~/Desktop'
 alias j="cd ~/code/julie"
 alias i="cd ~/code/julie/go/src/github.com/julieqiu/inspiration"
 alias jgo="i"
+
 ### ~~~ SPRING DIRECTORIES ~~~ ###
-alias ca="cd ~/code/branded/exp/calypso"
-alias caa="cd ~/code/branded/exp/calypso/app"
+alias b="cd ~/code/jellolabs/branded/"
+
+alias ca="b; cd exp/calypso"
+alias caa="ca; cd app"
 alias car="ca; RAILS_ENV=local rails s -p 5500"
-alias b="cd ~/code/branded/"
+
+alias jello="b; cd go/src/jello"
+
 alias bgo="jello"
-alias bgom="jello; cd ./models;"
-alias bgomp="cd ~/code/branded/go/src/jello/models/product_merge"
-alias bgosu="cd ~/code/branded/go/src/jello/integrations/osu"
-alias bgosuj="cd ~/code/branded/go/src/jello/integrations/osu/jobs"
-alias bios="cd ~/code/branded/ios"
-alias bjs="cd ~/code/branded/js"
-alias bops="cd ~/code/branded/ops"
-alias bpy="cd ~/code/branded/python"
-alias btools="cd ~/code/branded/tools"
-alias jello="cd ~/code/branded/go/src/jello"
-alias jl="cd ~/code/branded/go/src/jello"
-alias jlm="cd ~/code/branded/go/src/jello/models"
+alias bgom="jello; cd models"
+alias bgomp="jello; cd models/product_merge"
+alias bgosu="jello; cd integrations/osu"
+alias bgosuj="bgosu; cd jobs"
+alias bios="b; cd ios"
+alias bjs="b; cd js"
+alias bops="b; cd ops"
+alias bpy="b; cd python"
+alias btools="b; cd tools"
 
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
 ### ~~~ SPRING MIGRATE ~~~ ###
 function migr {
-    ~/code/branded/tools/migrate_dev.sh
+    ~/code/jellolabs/branded/tools/migrate_dev.sh
 }
 ### ~~~ SPRING REGOLD ~~~ ###
 function regold {
-    ~/code/branded/tools/regold.sh $1
+    ~/code/jellolabs/branded/tools/regold.sh $1
 }
 ### ~~~ SPRING COPY 4REAL THINGS ~~~ ###
 function copy_vendor {
-    ~/code/branded/tools/sql/copiers/copy_vendor.py \
+    ~/code/jellolabs/branded/tools/sql/copiers/copy_vendor.py \
         ${2:-4real} \
         --dest_env=${3:-local} \
         ${4:---write} \
         $1
 }
 function copy_product {
-    ~/code/branded/tools/sql/copiers/copy_product.py \
+    ~/code/jellolabs/branded/tools/sql/copiers/copy_product.py \
         ${3:-4real} \
         --dest_vendor_id=$2 \
         --dest_env=${4:-local} \
@@ -155,10 +157,10 @@ alias deve="fab env:dev psql:echub"
 
 alias redshift='PGPASSWORD=$DB_REDSHIFT_PASSWORD psql -h spring.cminumodijif.us-east-1.redshift.amazonaws.com -U $DB_REDSHIFT_USER -p5439 for_real'
 ### ~~~ SPRING SERVERS ~~~ ###
-alias sfe="$HOME/code/branded/tools/run_sfe.sh"
-alias vfe="$HOME/code/branded/tools/run_vfe.sh"
-alias xfe="$HOME/code/branded/tools/run_xfe.sh"
-alias echub="$HOME/code/branded/tools/run_echub.sh"
+alias sfe="$HOME/code/jellolabs/branded/tools/run_sfe.sh"
+alias vfe="$HOME/code/jellolabs/branded/tools/run_vfe.sh"
+alias xfe="$HOME/code/jellolabs/branded/tools/run_xfe.sh"
+alias echub="$HOME/code/jellolabs/branded/tools/run_echub.sh"
 alias osu="./tools/run_osu.sh -runOnly=order_status"
 
 alias brwork="go run go/src/jello/branded_worker/branded_worker.go"
@@ -172,7 +174,7 @@ alias omgwtf="killall {vfe,sfe,echub,fswatch,xfe}{,_test}"
 alias fixpsql="/usr/local/opt/postgresql93/bin/postgres -D /usr/local/var/postgres -r /usr/local/var/postgres/server.log"
 alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log restart"
 # Fix elastic search
-alias elasticsearch="b; ~/code/branded/tools/start_elasticsearch.sh --recreate"
+alias elasticsearch="b; ~/code/jellolabs/branded/tools/start_elasticsearch.sh --recreate"
 
 
 
@@ -213,7 +215,7 @@ function gott {
 
 # Elastic Search
 function elasticsearch2 {
-    eval "$(${HOME}/code/branded/tools/run_docker_machine.sh)"
+    eval "$(${HOME}/code/jellolabs/branded/tools/run_docker_machine.sh)"
     curl -XPUT "${DOCKER_HOST_IP}:9200/products_*/_alias/products"
 }
 
