@@ -80,7 +80,7 @@ set guioptions-=m
 set guioptions-=T
 
 " Settings: Remove trailing whitespace
- autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 " highlight trailing whitespace characters
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -220,10 +220,13 @@ set smartcase
 " Settings: Buffer
 set confirm
 set hidden
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
+
+" Use ctrl-[hjkl] to select the active split
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <C-o>:Update<CR>
 vnoremap <C-s> <C-o>:Update<CR>
@@ -290,3 +293,21 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 au BufNewFile,BufRead *.less set filetype=less
 
 set gfn=Monaco:h18
+
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
+" auto-resize window splits after screen change
+augroup Misc
+    autocmd!
+    autocmd VimResized * exe "normal! \<c-w>="
+augroup END
+
+" disable autofolding in vim-markdown
+let g:vim_markdown_folding_disabled=1
+
+" Disable beeping in vim
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+endif
