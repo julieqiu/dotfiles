@@ -8,7 +8,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Source Keys and Aliases
-source ~/.bash_profile
+source ~/.SECRET
 source ~/.bashrc
 
 # Export
@@ -20,9 +20,16 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export PGHOST=localhost
 export ENVIRONMENT="dev"
 export POSTGRES_PASSWORD="12341234"
-export GOPATH="/Users/julie/code/jellolabs/branded/go:/Users/julie/code/jellolabs/go:/usr/local/Cellar/go/1.6.2/libexec"
-export PATH=$PATH:/Library/PostgreSQL/9.3/bin:/usr/local/bin/git:/usr/local/bin/gofmt # this makes Github OSX work with commit hooks
 export PYTHONPATH="/Users/julie/code/branded/python"
+export GOPATH="/Users/julie/code/jellolabs/branded/go:/Users/julie/code/jellolabs/go:/usr/local/Cellar/go/1.6.2/libexec"
+export PATH=$HOME/code/jellolabs/branded/go/bin:$HOME/Julie/code/jellolabs/go/bin:/usr/local/Cellar/go/1.6.2/libexec/bin:/Users/Julie/.rbenv/shims:/Users/Julie/code/arcanist/bin:/Users/Julie/code/branded/go/bin:/Users/Julie/code/go/bin:/Users/Julie/.rbenv/shims:/Library/PostgreSQL/9.3/bin:/Users/Julie/code/julie/go/bin:/Users/Julie/code/branded/go/bin:/Users/Julie/code/go/bin:/Users/Julie/code/arcanist/bin:/Library/PostgreSQL/9.3/bin:/Users/Julie/code/julie/go/bin:/Users/Julie/code/branded/go/bin:/Users/Julie/code/go/bin:/Users/Julie/code/arcanist/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/PostgreSQL/9.3/bin:$HOME/code/jellolabs/arcanist/bin:$PATH
+export PATH=$PATH:/Library/PostgreSQL/9.3/bin:/usr/local/bin/git:/usr/local/bin/gofmt # this makes Github OSX work with commit hooks
+
+export RBENV_ROOT=~/.rbenv
+export PATH=$RBENV_ROOT/bin:$PATH
+eval "$(rbenv init -)"
+export NVM_DIR=/Users/Julie/.nvm
+source /usr/local/opt/nvm/nvm.sh
 
 
 # Source iterm2 login
