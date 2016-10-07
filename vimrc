@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'solarnz/arcanist.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
