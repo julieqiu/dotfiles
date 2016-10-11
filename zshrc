@@ -30,7 +30,7 @@ export RBENV_ROOT=~/.rbenv
 export PATH=$RBENV_ROOT/bin:$PATH
 eval "$(rbenv init -)"
 export NVM_DIR=/Users/Julie/.nvm
-source /usr/local/opt/nvm/nvm.sh
+# source /usr/local/opt/nvm/nvm.sh
 
 
 # Source iterm2 login
