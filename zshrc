@@ -12,6 +12,7 @@ source ~/.SECRET
 source ~/.bashrc
 
 # Export
+export DOCKER_API_VERSION=1.23
 export KETTIMEOUT=1
 export EDITOR="vim"
 export GIT_EDITOR='vim'
