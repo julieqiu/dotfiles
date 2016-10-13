@@ -12,17 +12,6 @@ source ~/.SECRET
 source ~/.bashrc
 source ~/.bash_profile
 
-# Export
-export DOCKER_API_VERSION=1.23
-export KETTIMEOUT=1
-export EDITOR="vim"
-export GIT_EDITOR='vim'
-export VISUAL="vim"
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export PGHOST=localhost
-export ENVIRONMENT="dev"
-export POSTGRES_PASSWORD="12341234"
-
 # Source iterm2 login
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
