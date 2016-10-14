@@ -33,7 +33,7 @@ eval "$(rbenv init -)"
 
 # NODE
 export NVM_DIR=$HOME/.nvm
-# source /usr/local/opt/nvm/nvm.sh
+. "$(brew --prefix nvm)/nvm.sh"
 
 # GENERAL EXPORTs
 export DOCKER_API_VERSION=1.23
@@ -45,3 +45,4 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export PGHOST=localhost
 export ENVIRONMENT="dev"
 export POSTGRES_PASSWORD="12341234"
+
