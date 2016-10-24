@@ -180,8 +180,7 @@ alias fixpsql="/usr/local/opt/postgresql93/bin/postgres -D /usr/local/var/postgr
 alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log restart"
 # Fix elastic search
 alias elasticsearch="b; ~/code/jellolabs/branded/tools/start_elasticsearch.sh --recreate"
-
-
+alias fixdocker="docker-machine rm local; docker-machine create -d virtualbox local;"
 
 ### ~~~ RANDOM ~~~ ###
 alias movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
