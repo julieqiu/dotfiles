@@ -44,3 +44,8 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export PGHOST=localhost
 export ENVIRONMENT="dev"
 export POSTGRES_PASSWORD="12341234"
+
+# HTTPSTAT
+export HTTPSTAT_SHOW_IP=false
+export HTTPSTAT_SHOW_SPEED=true
+export HTTPSTAT_SAVE_BODY=true

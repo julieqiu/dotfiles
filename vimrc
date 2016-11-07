@@ -18,10 +18,11 @@ Plugin 'nvie/vim-flake8'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'solarnz/arcanist.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails'
 Plugin 'rizzatti/dash.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
