@@ -1,3 +1,8 @@
+# RUBY
+export RBENV_ROOT=~/.rbenv
+export PATH=$RBENV_ROOT/bin:$PATH
+eval "$(rbenv init -)"
+
 # GOPATHs
 export GOPATH=$HOME/code/jellolabs/branded/go
 export GOPATH=$GOPATH:$HOME/code/jellolabs/go
@@ -9,7 +14,6 @@ export PYTHONPATH=$HOME/code/branded/python
 export PATH=$HOME/code/jellolabs/branded/go/bin
 export PATH=$PATH:$HOME/code/jellolabs/arcanist/bin
 export PATH=$PATH:$HOME/code/jellolabs/go/bin
-export PATH=$PATH:$HOME/.rbenv/shims
 
 # MY PATHs
 export PATH=$PATH:$HOME/code/julie/go/bin
@@ -25,11 +29,6 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/bin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/bin
-
-# RUBY
-export RBENV_ROOT=~/.rbenv
-export PATH=$RBENV_ROOT/bin:$PATH
-eval "$(rbenv init -)"
 
 # NODE
 export NVM_DIR=$HOME/.nvm

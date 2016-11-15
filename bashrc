@@ -139,7 +139,15 @@ function copy_product {
         $1
 }
 function in4r {
-    if [[ $(git tag --contains $1 | grep "^4real") ]]; then
+    if [[ $(git tag --contains $1 | grep "^jenkins2-4real") ]]; then
+        echo "yeppers"
+    else
+        echo "nope"
+    fi
+}
+
+function indemo {
+    if [[ $(git tag --contains $1 | grep "^demo") ]]; then
         echo "yeppers"
     else
         echo "nope"
