@@ -11,7 +11,7 @@ export GOPATH=$GOPATH:/usr/local/Cellar/go/1.6.2/libexec
 export PYTHONPATH=$HOME/code/branded/python
 
 # SPRING PATHs
-export PATH=$HOME/code/jellolabs/branded/go/bin
+export PATH=$PATH:$HOME/code/jellolabs/branded/go/bin
 export PATH=$PATH:$HOME/code/jellolabs/arcanist/bin
 export PATH=$PATH:$HOME/code/jellolabs/go/bin
 
@@ -44,4 +44,3 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export PGHOST=localhost
 export ENVIRONMENT="dev"
 export POSTGRES_PASSWORD="12341234"
-

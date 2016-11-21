@@ -42,6 +42,7 @@ alias gmm="git commit -m"
 alias gp="git push"
 alias gpo="git push origin"
 alias gpom="git push origin master"
+alias glog="git log"
 # alias gpof="git push origin -f"
 alias gpull='gf; grom; git remote prune origin; migr;'
 alias gr="git rebase"
@@ -96,7 +97,9 @@ alias caa="ca; cd app"
 alias cas="ca; cd app/assets/stylesheets/carts"
 alias cav="ca; cd app/views/carts"
 alias cac="ca; cd app/controllers"
-alias srails="ca; RAILS_ENV=local rails s -p 5500"
+alias calocal="ca; RAILS_ENV=local rails s -p 5600"
+alias cadev="ca; RAILS_ENV=development rails s -p 5600"
+alias camigr="bundle exec rake db:migrate RAILS_ENV=development"
 
 alias jello="b; cd go/src/jello"
 
