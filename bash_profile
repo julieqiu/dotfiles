@@ -32,7 +32,7 @@ export PATH=$PATH:/usr/bin
 
 # NODE
 export NVM_DIR=$HOME/.nvm
-. "$(brew --prefix nvm)/nvm.sh"
+# . "$(brew --prefix nvm)/nvm.sh"
 
 # GENERAL EXPORTs
 export DOCKER_API_VERSION=1.23
