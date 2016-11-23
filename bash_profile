@@ -8,7 +8,7 @@ export GOPATH=$HOME/code/jellolabs/branded/go
 export GOPATH=$GOPATH:$HOME/code/jellolabs/go
 export GOPATH=$GOPATH:/usr/local/Cellar/go/1.6.2/libexec
 
-export PYTHONPATH=$HOME/code/branded/python
+export PYTHONPATH=$HOME/code/jellolabs/branded/python
 
 # SPRING PATHs
 export PATH=$PATH:$HOME/code/jellolabs/branded/go/bin

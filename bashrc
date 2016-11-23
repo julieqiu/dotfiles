@@ -111,8 +111,10 @@ alias bgosuj="bgosu; cd jobs"
 alias bios="b; cd ios"
 alias bjs="b; cd js"
 alias bops="b; cd ops"
-alias bpy="b; cd python"
 alias btools="b; cd tools"
+
+alias bpy="b; cd python"
+alias bpyq="bpy; cd pietl/qiu"
 
 
 
