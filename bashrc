@@ -115,8 +115,8 @@ alias btools="b; cd tools"
 
 alias pyenv="workon pietl"
 alias startcelery="celery -A celery_proj worker --loglevel=info"
-alias bpy="b; cd python; pietlenv"
-alias bpyq="bpy; cd pietl/qiu; pietlenv"
+alias bpy="b; cd python; pyenv"
+alias bpyq="bpy; cd pietl/qiu; pyenv"
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
