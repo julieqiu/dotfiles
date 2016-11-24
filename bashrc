@@ -113,9 +113,10 @@ alias bjs="b; cd js"
 alias bops="b; cd ops"
 alias btools="b; cd tools"
 
-alias bpy="b; cd python"
-alias bpyq="bpy; cd pietl/qiu"
-
+alias pyenv="workon pietl"
+alias startcelery="celery -A celery_proj worker --loglevel=info"
+alias bpy="b; cd python; pietlenv"
+alias bpyq="bpy; cd pietl/qiu; pietlenv"
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###

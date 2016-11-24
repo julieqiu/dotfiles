@@ -49,3 +49,5 @@ export POSTGRES_PASSWORD="12341234"
 export HTTPSTAT_SHOW_IP=false
 export HTTPSTAT_SHOW_SPEED=true
 export HTTPSTAT_SAVE_BODY=true
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
