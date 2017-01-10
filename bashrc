@@ -11,7 +11,6 @@ alias ff="find . | ag"
 alias ll="ls -lah"
 alias la="ls -A"
 alias c='clear'
-alias ag='ag --path-to-agignore=~/.agignore'
 
 
 ### ~~~ VIM TOOLS ~~~ ###
@@ -117,6 +116,7 @@ alias pyenv="workon pietl"
 alias startcelery="celery -A celery_proj worker --loglevel=info"
 alias bpy="b; cd python; pyenv"
 alias bpyq="bpy; cd pietl/qiu; pyenv"
+alias bpyq3="cd ~/code/jellolabs/branded/py3/shopspring/pietl/qiu"
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###

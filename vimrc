@@ -3,30 +3,34 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'fatih/vim-go'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'nvie/vim-flake8'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'solarnz/arcanist.vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+"" If we're not in vi-compatible mode, then load advanced VIM code
+"" like Bundles and colors
+if !has("compatible")
+  " Vundle code here
+  call vundle#begin()
+
+  " let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
+  Plugin 'altercation/vim-colors-solarized'
+  Plugin 'bling/vim-airline'
+  Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'fatih/vim-go'
+  Plugin 'kien/rainbow_parentheses.vim'
+  Plugin 'nvie/vim-flake8'
+  Plugin 'rking/ag.vim'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'solarnz/arcanist.vim'
+  Plugin 'rizzatti/dash.vim'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-ragtag'
+  Plugin 'tpope/vim-rails'
+  Plugin 'tpope/vim-surround'
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+endif
+
 filetype plugin indent on
-
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -40,6 +44,9 @@ filetype plugin indent on
 " Put your non-Plugin stuff after this line
 
 " My stuff
+
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
 
 " Settings: General
 filetype plugin indent on
