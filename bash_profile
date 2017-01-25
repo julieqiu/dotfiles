@@ -29,7 +29,7 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/bin
 
 # NODE
-export NVM_DIR=$HOME/.nvm
+# export NVM_DIR=$HOME/.nvm
 # . "$(brew --prefix nvm)/nvm.sh"
 
 # GENERAL EXPORTs
