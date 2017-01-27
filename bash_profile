@@ -53,8 +53,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 export GOPATH=$HOME/code/go:"/usr/local/opt/go16/libexec"
 export PATH=${GOPATH[@]//:/\/bin:}/bin:$PATH
-export NVM_DIR=/Users/julie/.nvm
-source /usr/local/opt/nvm/nvm.sh
+# export NVM_DIR=/Users/julie/.nvm
+# source /usr/local/opt/nvm/nvm.sh
 export GOPATH=$GOPATH:$HOME/code/branded/go
 export PATH=$HOME/code/branded/go/bin:$PATH
 export PATH=$HOME/code/arcanist/bin:$PATH
