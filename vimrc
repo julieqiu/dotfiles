@@ -13,19 +13,16 @@ if !has("compatible")
   " let Vundle manage Vundle, required
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'altercation/vim-colors-solarized'
-  Plugin 'bling/vim-airline'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'nvie/vim-flake8'
   Plugin 'rking/ag.vim'
   Plugin 'scrooloose/nerdtree'
-  Plugin 'solarnz/arcanist.vim'
-  Plugin 'rizzatti/dash.vim'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-ragtag'
-  Plugin 'tpope/vim-rails'
   Plugin 'tpope/vim-surround'
+  Plugin 'Valloric/YouCompleteMe'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
 endif
