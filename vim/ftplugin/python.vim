@@ -41,3 +41,12 @@ let g:pymode_rope_goto_definition_bind = "<g-d>"
 " " Override view python doc key shortcut to Ctrl-Shift-d
 " let g:pymode_doc_bind = "<C-S-h>"
 " let g:SimpylFold_fold_import = 0
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
