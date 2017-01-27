@@ -242,7 +242,6 @@ nnoremap <leader>T :enew<cr>
 " Edit Buffers
 nnoremap <leader>w :w<CR><CR>
 nnoremap <leader>e :edit<Space>
-nnoremap :w :w<CR>
 " Prints a numbered list of filenames when F5 is pressed
 nnoremap <F5> :buffers<CR>:buffer<Space>
 " Mappings to access buffers (don't use "\p" because a
