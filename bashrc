@@ -116,7 +116,7 @@ alias pyenv="workon pietl"
 alias startcelery="celery -A celery_proj worker --loglevel=info"
 alias bpy="b; cd python; pyenv"
 alias bpyq="bpy; cd pietl/qiu; pyenv"
-alias bpyq3="cd ~/code/jellolabs/branded/py3/shopspring/pietl/qiu"
+alias bpyq3="workon shopspring; cd ~/code/jellolabs/branded/py3/shopspring/pietl/qiu"
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
