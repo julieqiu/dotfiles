@@ -1,7 +1,7 @@
 # RUBY
-export RBENV_ROOT=~/.rbenv
-export PATH=$RBENV_ROOT/bin:$PATH
-eval "$(rbenv init -)"
+# export RBENV_ROOT=~/.rbenv
+# export PATH=$RBENV_ROOT/bin:$PATH
+# eval "$(rbenv init -)"
 
 # GOPATHs
 export GOPATH=$HOME/code/jellolabs/branded/go
@@ -33,36 +33,17 @@ export PATH=$PATH:/usr/bin
 # . "$(brew --prefix nvm)/nvm.sh"
 
 # GENERAL EXPORTs
-export DOCKER_API_VERSION=1.23
-export KETTIMEOUT=1
+# export DOCKER_API_VERSION=1.23
+# export KETTIMEOUT=1
+export PGHOST=localhost
 export EDITOR="vim"
 export GIT_EDITOR='vim'
 export VISUAL="vim"
-export LSCOLORS="exfxcxdxbxegedabagacad"
-export PGHOST=localhost
 export ENVIRONMENT="dev"
-export POSTGRES_PASSWORD="12341234"
 
-# HTTPSTAT
-export HTTPSTAT_SHOW_IP=false
-export HTTPSTAT_SHOW_SPEED=true
-export HTTPSTAT_SAVE_BODY=true
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
-
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export GOPATH=$HOME/code/go:"/usr/local/opt/go16/libexec"
-export PATH=${GOPATH[@]//:/\/bin:}/bin:$PATH
 # export NVM_DIR=/Users/julie/.nvm
 # source /usr/local/opt/nvm/nvm.sh
-export GOPATH=$GOPATH:$HOME/code/branded/go
-export PATH=$HOME/code/branded/go/bin:$PATH
-export PATH=$HOME/code/arcanist/bin:$PATH
-export WORKON_HOME="/Users/julie/Code/jellolabs/venv3"
-export PROJECT_HOME="/Users/julie/Code/jellolabs/branded/py3"
+# export PROJECT_HOME="/Users/julie/Code/jellolabs/branded/py3"
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME="/Users/julie/Code/jellolabs/venv3"
-export PROJECT_HOME="/Users/julie/Code/jellolabs/branded/py3"
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
