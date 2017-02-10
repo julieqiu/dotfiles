@@ -43,7 +43,6 @@ let g:pymode_rope_goto_definition_bind = "<g-d>"
 " let g:SimpylFold_fold_import = 0
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
