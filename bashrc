@@ -112,7 +112,6 @@ alias bjs="b; cd js"
 alias bops="b; cd ops"
 alias btools="b; cd tools"
 
-alias pyenv="workon pietl"
 alias startcelery="celery -A celery_proj worker --loglevel=info"
 alias bpy="b; cd python; pyenv"
 alias bpyq="bpy; cd pietl/qiu; pyenv"
