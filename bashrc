@@ -113,8 +113,8 @@ alias bops="b; cd ops"
 alias btools="b; cd tools"
 
 alias startcelery="celery -A celery_proj worker --loglevel=info"
-alias bpy="b; cd python; pyenv"
-alias bpyq="bpy; cd pietl/qiu; pyenv"
+alias bpy="b; cd python"
+alias bpyq="bpy; cd pietl/qiu"
 alias bpyq3="workon shopspring; cd ~/code/jellolabs/branded/py3/shopspring/pietl/qiu"
 
 
