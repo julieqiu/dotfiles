@@ -13,10 +13,12 @@ if !has("compatible")
   " let Vundle manage Vundle, required
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'altercation/vim-colors-solarized'
+  Plugin 'bling/vim-airline'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'nvie/vim-flake8'
+  Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-surround'
