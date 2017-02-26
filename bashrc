@@ -13,9 +13,14 @@ alias la="ls -A"
 alias c='clear'
 
 
+### ~~~ PYENV ~~~~ ###
+
+
+
 ### ~~~ VIM TOOLS ~~~ ###
 alias vi='vim'
 alias vim='mvim -v'
+
 
 ### ~~~ CONFIG FILES ~~~ ###
 alias szsh='source ~/.zshrc'
@@ -79,16 +84,15 @@ alias gotjm="go test jello/models -v"
 alias gotr="go test -run -v"
 
 
-
 ### ~~~ DIRECTORIES ~~~ ###
 alias code="cd ~/code"
 alias desktop='cd ~/Desktop'
-alias j="cd ~/code/julie"
-alias i="cd ~/code/julie/go/src/github.com/julieqiu/inspiration"
+alias j="cd /Users/Julie/code/julie/twenty-seventeen/py3"
 alias jgo="i"
 
+
 ### ~~~ SPRING DIRECTORIES ~~~ ###
-alias b="cd ~/code/jellolabs/branded/"
+alias b="cd /Users/Julie/code/jellolabs/branded"
 
 alias ca="b; cd exp/calypso"
 alias cal="ca; cd lib"

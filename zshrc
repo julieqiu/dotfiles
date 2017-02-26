@@ -11,11 +11,11 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/h
 # Source Keys and Aliases
 source ~/.SECRET
 source ~/.bashrc
-source ~/.bash_profile
+# source ~/.bash_profile
 
 # Source iterm2 login
-autoload run-help
-HELPDIR=/usr/local/share/zsh/help
+# autoload run-help
+# HELPDIR=/usr/local/share/zsh/help
 
 zmodload zsh/terminfo
 
@@ -62,5 +62,3 @@ stty erase '^?'
 stty stop undef
 stty ixany
 stty ixoff -ixon
-
-
