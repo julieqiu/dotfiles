@@ -115,6 +115,7 @@ alias bios="b; cd ios"
 alias bjs="b; cd js"
 alias bops="b; cd ops"
 alias btools="b; cd tools"
+alias tss="b; cd tools/sql/suppliers"
 
 alias startcelery="celery -A celery_proj worker --loglevel=info"
 alias bpy="b; cd python"
