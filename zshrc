@@ -10,6 +10,7 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/h
 
 # Source Keys and Aliases
 source ~/.SECRET
+source ~/.zprofile
 source ~/.bashrc
 # source ~/.bash_profile
 
@@ -62,3 +63,8 @@ stty erase '^?'
 stty stop undef
 stty ixany
 stty ixoff -ixon
+
+### Python 3 environment initialization
+eval "$(pyenv init -)"
+export WORKON_HOME="/Users/Julie/code/venv3"
+export PROJECT_HOME="/Users/Julie/Code/julie/flask-tutorial"

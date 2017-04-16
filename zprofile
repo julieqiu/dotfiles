@@ -104,3 +104,8 @@ export PATH=$PATH:$HOME/code/julie/go/bin
 #
 export PATH=$PATH:/Library/PostgreSQL/9.3/bin
 export PATH=$PATH:/usr/local/Cellar/go/1.6.2/libexec/bin
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1

@@ -87,7 +87,7 @@ alias gotr="go test -run -v"
 ### ~~~ DIRECTORIES ~~~ ###
 alias code="cd ~/code"
 alias desktop='cd ~/Desktop'
-alias j="cd /Users/Julie/code/julie/twenty-seventeen/py3"
+alias j="cd /Users/Julie/code/julie/twenty-seventeen/"
 alias jgo="i"
 
 
@@ -249,3 +249,7 @@ function shopify_api {
 }
 
 ## curl "http://localhost:3003/api/1/vendors/1/product_info?product_ids=262001613" | jq "."
+
+
+
+alias psqljd="psql julie_dev"

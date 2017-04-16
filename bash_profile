@@ -14,5 +14,5 @@
 ### Python 3 environment initialization
 eval "$(pyenv init -)"
 export WORKON_HOME="/Users/Julie/code/venv3"
-export PROJECT_HOME="/Users/Julie/Code/jellolabs/branded/py3"
+export PROJECT_HOME="/Users/Julie/Code/julie/twenty-seventeen/py3"
 pyenv virtualenvwrapper
