@@ -17,11 +17,12 @@ if !has("compatible")
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'kien/rainbow_parentheses.vim'
-  Plugin 'nvie/vim-flake8'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-surround'
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'vim-syntastic/syntastic'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
 endif
@@ -106,7 +107,7 @@ autocmd BufWinLeave * call clearmatches()
 " Settings: Display
 set encoding=utf-8
 set gfn=Monaco:h18
-set textwidth=79
+" set textwidth=79
 highlight ColorColumn ctermfg=Red
 match ColorColumn /\%81v.\+/
 set cursorline          " highlight current line
@@ -192,3 +193,24 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 " less-css syntax highlighting
 au BufNewFile,BufRead *.less set filetype=less
 
+" Syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_python_checkers = ['mypy', 'pylint']
+let g:syntastic_python_mypy_args = '-s --incremental'
+let g:syntastic_python_pylint_args = '--rcfile=/Users/julie/Code/jellolabs/branded/py3/pylint.ini'
+
+nnoremap <Leader>n :ll<CR>
+nnoremap <Leader>m :lnext<CR>
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+let g:ycm_server_python_interpreter = '/usr/bin/python'
