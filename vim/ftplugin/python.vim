@@ -11,7 +11,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.md :%s/\s\+$//e
 
 " call flake8 at every save
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
