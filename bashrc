@@ -118,8 +118,13 @@ alias btools="b; cd tools"
 alias tss="b; cd tools/sql/suppliers"
 
 alias startcelery="celery -A celery_proj worker --loglevel=info"
-alias bpy3="workon shopspring"
+alias bpy3="source ~/Code/jellolabs/venv3/shopspring/bin/activate"
+alias spw="cd ~/code/jellolabs/branded/py3/shopspring/personalization/workers"
+alias bpy3spw="bpy3; spw"
 alias bpyq3="workon shopspring; cd ~/code/jellolabs/branded/py3/shopspring/pietl/qiu"
+
+
+alias shopspring=". ~/Code/jellolabs/venv3/shopspring/bin/activate"
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
@@ -248,7 +253,5 @@ function shopify_api {
 }
 
 ## curl "http://localhost:3003/api/1/vendors/1/product_info?product_ids=262001613" | jq "."
-
-
 
 alias psqljd="psql julie_dev"
