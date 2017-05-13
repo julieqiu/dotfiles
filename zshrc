@@ -10,9 +10,8 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/h
 
 # Source Keys and Aliases
 source ~/.SECRET
-source ~/.zprofile
 source ~/.bashrc
-# source ~/.bash_profile
+source ~/.bash_profile
 
 # Source iterm2 login
 # autoload run-help
@@ -64,7 +63,8 @@ stty stop undef
 stty ixany
 stty ixoff -ixon
 
-### Python 3 environment initialization
-eval "$(pyenv init -)"
-export WORKON_HOME="/Users/Julie/code/venv3"
-export PROJECT_HOME="/Users/Julie/Code/julie/flask-tutorial"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/Julie/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/Julie/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/Julie/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/Julie/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
