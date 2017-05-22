@@ -85,7 +85,7 @@ export ENVIRONMENT="dev"
 #
 export GOPATH=$HOME/code/jellolabs/branded/go
 export GOPATH=$GOPATH:$HOME/code/jellolabs/go
-export GOPATH=$GOPATH:/usr/local/Cellar/go/1.6.2/libexec
+export GOPATH=$GOPATH:"$(brew --prefix go@1.8)/libexec"
 
 #
 # SPRING PATHs
