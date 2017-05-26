@@ -104,12 +104,3 @@ export PATH=$PATH:$HOME/code/julie/go/bin
 #
 export PATH=$PATH:/Library/PostgreSQL/9.3/bin
 export PATH=$PATH:/usr/local/Cellar/go/1.6.2/libexec/bin
-
-
-### Python 3 environment initialization
-# eval "$(pyenv init -)"
-# export WORKON_HOME="/Users/Julie/Code/venv3"
-# export PROJECT_HOME="/Users/Julie/Code/jellolabs/branded/py3"
-# pyenv virtualenvwrapper
-# export FLASK_DEBUG=1
-### End Python 3 environment initialization
