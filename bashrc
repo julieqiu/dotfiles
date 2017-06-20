@@ -1,3 +1,7 @@
+export CODE=$HOME/Code/
+export BRANDED=$CODE/jellolabs/branded
+export PY3VENV=$CODE/venv3/shopspring/bin/activate
+
 # bashrc contains all aliases
 
 ### ~~~ TERMINAL TOOLS ~~~ ###
@@ -11,15 +15,11 @@ alias ff="find . | ag"
 alias ll="ls -lah"
 alias la="ls -A"
 alias c='clear'
-
-
-### ~~~ PYENV ~~~~ ###
-
+alias findspace="du -shc .??* *"
 
 
 ### ~~~ VIM TOOLS ~~~ ###
 alias vi='vim'
-alias vim='mvim -v'
 
 
 ### ~~~ CONFIG FILES ~~~ ###
@@ -30,7 +30,7 @@ alias vzsh='vim ~/.zshrc'
 alias vinstall="vim +PluginInstall +qall"
 
 
-# Git Commands
+### ~~~ Git Commands ~~~ ###
 alias gaa="git add -u"
 alias gb="git branch"
 alias grn="git branch -m"
@@ -58,10 +58,9 @@ alias grhom="git reset --hard origin/master"
 alias grs="git rebase --skip"
 alias gs="git status"
 alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
-alias gremoveuntracked="git clean -fd"
+alias gclean="git clean -fd"
 alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
 alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
-
 
 
 ### ~~~ ARCANIST ~~~ ###
@@ -71,7 +70,6 @@ alias al="git fetch; git rebase origin/master; arc land"
 alias adu="arc diff --update"
 alias adm="arc diff --base git:origin/master"
 alias adpc="arc diff --plan-changes"
-
 
 
 ### ~~~ GOLANG ~~~ ###
@@ -87,12 +85,10 @@ alias gotr="go test -run -v"
 ### ~~~ DIRECTORIES ~~~ ###
 alias code="cd ~/code"
 alias desktop='cd ~/Desktop'
-alias j="cd /Users/Julie/code/julie/twenty-seventeen/"
-alias jgo="i"
 
 
 ### ~~~ SPRING DIRECTORIES ~~~ ###
-alias b="cd /Users/Julie/code/jellolabs/branded"
+alias b='cd $BRANDED'
 
 alias ca="b; cd exp/calypso"
 alias cal="ca; cd lib"
@@ -118,54 +114,20 @@ alias btools="b; cd tools"
 alias tss="b; cd tools/sql/suppliers"
 
 alias startcelery="celery -A celery_proj worker --loglevel=info"
-alias bpy3="source ~/Code/jellolabs/venv3/shopspring/bin/activate"
-alias spw="cd ~/code/jellolabs/branded/py3/shopspring/personalization/workers"
+alias bpy3='source $PY3VENV'
+alias spw='cd $BRANDED/py3/shopspring/personalization/workers'
 alias bpy3spw="bpy3; spw"
-alias bpyq3="workon shopspring; cd ~/code/jellolabs/branded/py3/shopspring/pietl/qiu"
-
-
-alias shopspring=". ~/Code/jellolabs/venv3/shopspring/bin/activate"
+alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
 
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
 ### ~~~ SPRING MIGRATE ~~~ ###
 function migr {
-    ~/code/jellolabs/branded/tools/migrate_dev.sh
+    "$BRANDED"/tools/migrate_dev.sh
 }
 ### ~~~ SPRING REGOLD ~~~ ###
 function regold {
-    ~/code/jellolabs/branded/tools/regold.sh $1
-}
-### ~~~ SPRING COPY 4REAL THINGS ~~~ ###
-function copy_vendor {
-    ~/code/jellolabs/branded/tools/sql/copiers/copy_vendor.py \
-        ${2:-4real} \
-        --dest_env=${3:-local} \
-        ${4:---write} \
-        $1
-}
-function copy_product {
-    ~/code/jellolabs/branded/tools/sql/copiers/copy_product.py \
-        ${3:-4real} \
-        --dest_vendor_id=$2 \
-        --dest_env=${4:-local} \
-        ${5:---write} \
-        $1
-}
-function in4r {
-    if [[ $(git tag --contains $1 | grep "^jenkins2-4real") ]]; then
-        echo "yeppers"
-    else
-        echo "nope"
-    fi
-}
-
-function indemo {
-    if [[ $(git tag --contains $1 | grep "^demo") ]]; then
-        echo "yeppers"
-    else
-        echo "nope"
-    fi
+    "$BRANDED"/tools/regold.sh "$1"
 }
 
 ### ~~ SPRING LOCAL DATABASES ~~~ ###
@@ -185,15 +147,14 @@ alias deve="fab env:dev psql:echub"
 
 alias redshift='PGPASSWORD=$DB_REDSHIFT_PASSWORD psql -h spring.cminumodijif.us-east-1.redshift.amazonaws.com -U $DB_REDSHIFT_USER -p5439 for_real'
 ### ~~~ SPRING SERVERS ~~~ ###
-alias sfe="$HOME/code/jellolabs/branded/tools/run_sfe.sh"
-alias vfe="$HOME/code/jellolabs/branded/tools/run_vfe.sh"
-alias xfe="$HOME/code/jellolabs/branded/tools/run_xfe.sh"
-alias echub="$HOME/code/jellolabs/branded/tools/run_echub.sh"
-alias osu="./tools/run_osu.sh -runOnly=order_status"
+alias sfe='$BRANDED/tools/run_sfe.sh'
+alias vfe='$BRANDED/tools/run_vfe.sh'
+alias xfe='$BRANDED/tools/run_xfe.sh'
+alias echub='$BRANDED/tools/run_echub.sh'
+alias osu='$BRANDED/tools/run_osu.sh -runOnly=order_status'
 
 alias brwork="go run go/src/jello/branded_worker/branded_worker.go"
 alias echwork="go run go/src/jello/integrations/echub_worker/echub_worker.go"
-
 
 
 ### ~~~ FIXES ~~~ ###
@@ -202,11 +163,11 @@ alias omgwtf="killall {vfe,sfe,echub,fswatch,xfe}{,_test}"
 alias fixpsql="/usr/local/opt/postgresql93/bin/postgres -D /usr/local/var/postgres -r /usr/local/var/postgres/server.log"
 alias fixpsql2="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log restart"
 # Fix elastic search
-alias elasticsearch="b; ~/code/jellolabs/branded/tools/start_elasticsearch.sh --recreate"
+alias elasticsearch='b; $BRANDED/tools/start_elasticsearch.sh --recreate'
 alias fixdocker="docker-machine rm local; docker-machine create -d virtualbox local;"
 
 ### ~~~ RANDOM ~~~ ###
-alias movefile="for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;"
+alias movefile='for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;'
 # search for processes by name
 alias procs="ps -ef | ag"
 # play a sound
@@ -236,14 +197,7 @@ function gott {
         done
         name=$i$name
     fi
-    gotv $1 > $name.txt
-}
-
-
-# Elastic Search
-function elasticsearch2 {
-    eval "$(${HOME}/code/jellolabs/branded/tools/run_docker_machine.sh)"
-    curl -XPUT "${DOCKER_HOST_IP}:9200/products_*/_alias/products"
+    gotv "$1" > "$name".txt
 }
 
 
@@ -251,7 +205,3 @@ function elasticsearch2 {
 function shopify_api {
     curl --header "X-Shopify-Access-Token:$JELLO_SHOPIFY" "https://jello-test.myshopify.com/admin/products/$1.json" | jq "."
 }
-
-## curl "http://localhost:3003/api/1/vendors/1/product_info?product_ids=262001613" | jq "."
-
-alias psqljd="psql julie_dev"
