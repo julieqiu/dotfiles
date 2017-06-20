@@ -21,7 +21,6 @@ if !has("compatible")
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-surround'
-  Plugin 'Valloric/YouCompleteMe'
   Plugin 'vim-syntastic/syntastic'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
@@ -201,16 +200,5 @@ let g:syntastic_python_pylint_args = '--rcfile=/Users/julie/Code/jellolabs/brand
 
 nnoremap <Leader>n :ll<CR>
 nnoremap <Leader>m :lnext<CR>
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
