@@ -1,5 +1,5 @@
-export CODE=$HOME/Code/
-export BRANDED=$CODE/jellolabs/branded
+export CODE=$HOME/Code
+export BRANDED=$CODE/branded
 export PY3VENV=$CODE/venv3/shopspring/bin/activate
 
 # bashrc contains all aliases
