@@ -90,9 +90,9 @@ export GOPATH=$GOPATH:"$(brew --prefix go@1.8)/libexec"
 #
 # SPRING PATHs
 #
-export PATH=$PATH:$HOME/code/jellolabs/branded/go/bin
-export PATH=$PATH:$HOME/code/jellolabs/arcanist/bin
-export PATH=$PATH:$HOME/code/jellolabs/go/bin
+export PATH=$PATH:$HOME/code/branded/go/bin
+export PATH=$PATH:$HOME/code/arcanist/bin
+export PATH=$PATH:$HOME/code/go/bin
 
 #
 # MY PATHs

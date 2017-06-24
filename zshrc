@@ -12,6 +12,7 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/h
 source ~/.SECRET
 source ~/.bashrc
 source ~/.bash_profile
+source ~/.fabricrc
 
 # Source iterm2 login
 # autoload run-help

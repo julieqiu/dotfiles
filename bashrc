@@ -61,7 +61,7 @@ alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
 alias gclean="git clean -fd"
 alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
 alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
-
+alias grn="git branch -m"
 
 ### ~~~ ARCANIST ~~~ ###
 alias ad="arc diff"
@@ -119,7 +119,6 @@ alias spw='cd $BRANDED/py3/shopspring/personalization/workers'
 alias bpy3spw="bpy3; spw"
 alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
 
-
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
 ### ~~~ SPRING MIGRATE ~~~ ###
 function migr {
@@ -130,6 +129,22 @@ function regold {
     "$BRANDED"/tools/regold.sh "$1"
 }
 
+function in4r {
+    if [[ $(git tag --contains $1 | grep "^jenkins2-4real") ]]; then
+        echo "yeppers"
+    else
+        echo "nope"
+    fi
+}
+
+function indemo {
+    if [[ $(git tag --contains $1 | grep "^demo") ]]; then
+        echo "yeppers"
+    else
+        echo "nope"
+    fi
+}
+
 ### ~~ SPRING LOCAL DATABASES ~~~ ###
 alias psqlbd="psql branded_dev"
 alias psqlbt="psql branded_test"
@@ -137,13 +152,10 @@ alias psqled="psql echub_dev"
 alias psqlet="psql echub_test"
 ### ~~~ SPRING REMOTE DATABASES ~~~ ###
 alias 4rbr="fab env:4real psql:branded"
-alias 4rec="fab env:4real psql:echub"
 alias 4rec_write="fab env:4real psql_write:branded"
-alias 4rbr_write="fab env:4real psql_write:echub"
+alias demb_write="fab env:demo psql_write:branded"
 alias demb="fab env:demo psql:branded"
-alias deme="fab env:demo psql:echub"
-alias devb="fab env:dev psql:branded"
-alias deve="fab env:dev psql:echub"
+alias devb="fab env:dev psql:branded psql_write:branded"
 
 alias redshift='PGPASSWORD=$DB_REDSHIFT_PASSWORD psql -h spring.cminumodijif.us-east-1.redshift.amazonaws.com -U $DB_REDSHIFT_USER -p5439 for_real'
 ### ~~~ SPRING SERVERS ~~~ ###
@@ -198,6 +210,13 @@ function gott {
         name=$i$name
     fi
     gotv "$1" > "$name".txt
+}
+
+
+# Elastic Search
+function elasticsearch2 {
+    eval "$(${HOME}/code/branded/tools/run_docker_machine.sh)"
+    curl -XPUT "${DOCKER_HOST_IP}:9200/products_*/_alias/products"
 }
 
 
