@@ -1,3 +1,4 @@
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -9,10 +10,10 @@ source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # Source Keys and Aliases
-source ~/.SECRET
-source ~/.bashrc
 source ~/.bash_profile
+source ~/.SECRET
 source ~/.fabricrc
+source ~/.bashrc
 
 # Source iterm2 login
 # autoload run-help
@@ -63,9 +64,3 @@ stty erase '^?'
 stty stop undef
 stty ixany
 stty ixoff -ixon
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/Julie/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/Julie/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/Julie/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/Julie/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
