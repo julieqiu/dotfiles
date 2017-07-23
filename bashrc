@@ -1,4 +1,29 @@
-# bashrc contains all aliases
+#
+# EXPORTs
+#
+export CODE=$HOME/Code
+export BRANDED=$CODE/branded
+export PY3VENV=$CODE/venv3/shopspring/bin/activate
+
+### ~~~ Go  ~~~ ###
+export GOPATH=$BRANDED/go:$HOME/go:/usr/local/opt/go/libexec
+
+### ~~~ Python 3 ~~~ ###
+export WORKON_HOME=$CODE/venv3
+export PROJECT_HOME=$BRANDED/py3
+
+### ~~~ PATH  ~~~ ###
+# Spring
+export PATH=$PATH:$BRANDED/go/bin
+export PATH=$PATH:$CODE/arcanist/bin
+export PATH=$PATH:$CODE/go/bin
+# General
+export PATH=$PATH:/Library/PostgreSQL/9.3/bin
+export PATH=$PATH:/usr/local/Cellar/go/1.6.2/libexec/bin
+
+#
+# ALIASes
+#
 
 ### ~~~ TERMINAL TOOLS ~~~ ###
 # Remove swp files

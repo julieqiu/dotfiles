@@ -17,11 +17,9 @@ if !has("compatible")
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'fatih/vim-go'
   Plugin 'kien/rainbow_parentheses.vim'
-  Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-surround'
-  " Plugin 'Valloric/YouCompleteMe'
+  Plugin 'Valloric/YouCompleteMe'
   Plugin 'vim-syntastic/syntastic'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
@@ -84,13 +82,11 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 " Settings: General
-filetype plugin indent on
 syntax on
 syntax enable           " enable syntax processing
 let mapleader = "\<Space>"
 set clipboard=unnamed
 set noswapfile
-
 
 " Settings: Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -145,6 +141,7 @@ nnoremap <Down> <C-e>
 set autoindent
 set backspace=2
 set copyindent		" copy structure of existing lines indent
+set paste
 set smartindent
 set sts=4 sw=4 ts=4 et
 " nnoremap <C-s-v> :set paste <CR><Insert>
@@ -203,6 +200,8 @@ nnoremap <Leader>n :ll<CR>
 nnoremap <Leader>m :lnext<CR>
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
 py << EOF
