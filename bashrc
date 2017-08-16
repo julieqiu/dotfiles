@@ -41,6 +41,7 @@ alias findspace="du -shc .??* *"
 
 ### ~~~ VIM TOOLS ~~~ ###
 alias vi='vim'
+alias vim='mvim -v'
 
 
 ### ~~~ CONFIG FILES ~~~ ###
