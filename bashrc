@@ -4,9 +4,10 @@
 export CODE=$HOME/Code
 export BRANDED=$CODE/branded
 export PY3VENV=$CODE/venv3/shopspring/bin/activate
+export SPRINGVENV=$CODE/spring-python2/bin/activate
 
 ### ~~~ Go  ~~~ ###
-export GOPATH=$BRANDED/go:$HOME/go:/usr/local/opt/go/libexec
+export GOPATH=$HOME/go:$BRANDED/go:/usr/local/opt/go/libexec
 
 ### ~~~ Python 3 ~~~ ###
 export WORKON_HOME=$CODE/venv3
@@ -31,7 +32,7 @@ alias rmswp='find . -name ".*.swp" -type f -delete; find . -name "*~" -type f -d
 # Remove tmp files
 alias rmtmp='find . -name "*tmp*.txt" -type f -delete; find . -name "*~" -type f -delete'
 # Find a file
-alias ff="find . | ag"
+alias ff="find . | rg"
 # Shortcuts
 alias ll="ls -lah"
 alias la="ls -A"
@@ -137,9 +138,13 @@ alias tss="b; cd tools/sql/suppliers"
 
 alias startcelery="celery -A celery_proj worker --loglevel=info"
 alias bpy3='source $PY3VENV'
+alias bpy2='source $SPRINGVENV'
 alias spw='cd $BRANDED/py3/shopspring/personalization/workers'
 alias bpy3spw="bpy3; spw"
 alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
+
+### ~~~ SPRING VM ~~~ ###
+alias vssh='cd $HOME/springdev; vagrant ssh'
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
 ### ~~~ SPRING MIGRATE ~~~ ###
@@ -203,7 +208,7 @@ alias fixdocker="docker-machine rm local; docker-machine create -d virtualbox lo
 ### ~~~ RANDOM ~~~ ###
 alias movefile='for filename in *.jpg; do mv "$filename" "prefix_$filename"; done;'
 # search for processes by name
-alias procs="ps -ef | ag"
+alias procs="ps -ef | rg"
 # play a sound
 alias sound='afplay /System/Library/Sounds/Ping.aiff'
 # open all config files
