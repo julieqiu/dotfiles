@@ -144,6 +144,7 @@ alias bpy3spw="bpy3; spw"
 alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
 
 ### ~~~ SPRING VM ~~~ ###
+alias vup='cd $HOME/springdev; vagrant up'
 alias vssh='cd $HOME/springdev; vagrant ssh'
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
