@@ -142,6 +142,8 @@ alias bpy2='source $SPRINGVENV'
 alias spw='cd $BRANDED/py3/shopspring/personalization/workers'
 alias bpy3spw="bpy3; spw"
 alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
+alias bpy3ts='cd $BRANDED/py3/shopspring/test/components/'
+alias twigg='cd $BRANDED/py3/shopspring/search/twiggle/'
 
 ### ~~~ SPRING VM ~~~ ###
 alias vup='cd $HOME/springdev; vagrant up'
@@ -224,6 +226,7 @@ alias pig='safetypig'
 # restart clipboard if it's being a jerk
 alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
 
+alias vm='cd $HOME/springdev; vagrant ssh'
 
 
 ### ~~~ FUNCTIONS ~~~ ###

@@ -85,7 +85,6 @@ au Syntax * RainbowParenthesesLoadBraces
 syntax on
 syntax enable           " enable syntax processing
 let mapleader = "\<Space>"
-set clipboard=unnamed
 set noswapfile
 
 " Settings: Remove trailing whitespace
@@ -203,6 +202,8 @@ let g:ycm_server_python_interpreter = '/usr/bin/python'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+set clipboard=unnamed
+
 "python with virtualenv support
 py << EOF
 import os
@@ -213,3 +214,5 @@ if 'VIRTUAL_ENV' in os.environ:
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
   execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+
