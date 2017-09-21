@@ -26,6 +26,10 @@ export PATH=$PATH:/usr/local/Cellar/go/1.6.2/libexec/bin
 # ALIASes
 #
 
+### ~~~ SHORTCUTS TO DIRECTORIES ~~~ ###
+alias tv='cd $CODE/theviewfromjq'
+
+
 ### ~~~ TERMINAL TOOLS ~~~ ###
 # Remove swp files
 alias rmswp='find . -name ".*.swp" -type f -delete; find . -name "*~" -type f -delete'
@@ -144,6 +148,8 @@ alias bpy3spw="bpy3; spw"
 alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
 alias bpy3ts='cd $BRANDED/py3/shopspring/test/components/'
 alias twigg='cd $BRANDED/py3/shopspring/search/twiggle/'
+
+alias fixpytest='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 
 ### ~~~ SPRING VM ~~~ ###
 alias vup='cd $HOME/springdev; vagrant up'
