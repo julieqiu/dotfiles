@@ -64,6 +64,3 @@ stty erase '^?'
 stty stop undef
 stty ixany
 stty ixoff -ixon
-
-source /Users/julie/Desktop/google-cloud-sdk/completion.zsh.inc
-source /Users/julie/Desktop/google-cloud-sdk/path.zsh.inc
