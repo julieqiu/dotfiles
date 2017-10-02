@@ -261,3 +261,16 @@ function elasticsearch2 {
 function shopify_api {
     curl --header "X-Shopify-Access-Token:$JELLO_SHOPIFY" "https://jello-test.myshopify.com/admin/products/$1.json" | jq "."
 }
+
+# My function to take quick notes on useful commands
+notes() {
+  if [ ! -z "$1" ]; then
+    # Using the "$@" here will take all parameters passed into
+    # this function so we can place everything into our file.
+    echo $(date +"%Y-%m-%d %H:%M:%S") $@  >> $HOME/Dropbox/Spring/notes.md
+  else
+    # If no arguments were passed we will take stdout and place
+    # it into our notes instead.
+    echo $(date +"%Y-%m-%d %H:%M:%S") "$(cat)"  >> $HOME/Dropbox/Spring/notes.md
+  fi
+}
