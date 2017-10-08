@@ -274,3 +274,4 @@ notes() {
     echo $(date +"%Y-%m-%d %H:%M:%S") "$(cat)"  >> $HOME/Dropbox/Spring/notes.md
   fi
 }
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
