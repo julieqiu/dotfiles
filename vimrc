@@ -67,6 +67,14 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|git|svn))$'
+" ctrl-p speed ups
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
 nnoremap <C-b> :CtrlPBuffer <CR>
 
 
@@ -215,4 +223,5 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+noremap <leader>g :Ag <cword><CR>
