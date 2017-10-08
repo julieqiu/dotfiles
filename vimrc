@@ -75,6 +75,11 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .DS_Store
       \ --ignore "**/*.pyc"
       \ -g ""'
+let g:ctrlp_working_path_mode = 'ra'
+" 'c' - the directory of the current file.
+" 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr
+" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file.
+" 0 or '' (empty string) - disable this feature.
 nnoremap <C-b> :CtrlPBuffer <CR>
 
 
