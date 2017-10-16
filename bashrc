@@ -149,8 +149,6 @@ alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
 alias bpy3ts='cd $BRANDED/py3/shopspring/test/components/'
 alias twigg='cd $BRANDED/py3/shopspring/search/twiggle/'
 
-alias fixpytest='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
-
 ### ~~~ SPRING VM ~~~ ###
 alias vup='cd $HOME/springdev; vagrant up'
 alias vssh='cd $HOME/springdev; vagrant ssh'
@@ -233,7 +231,6 @@ alias pig='safetypig'
 alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
 
 alias vm='cd $HOME/springdev; vagrant ssh'
-
 
 ### ~~~ FUNCTIONS ~~~ ###
 # Pipe tests into tmp files
