@@ -16,6 +16,7 @@ if !has("compatible")
   Plugin 'bling/vim-airline'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'davidhalter/jedi-vim'
+  Plugin 'ervandew/supertab'
   Plugin 'fatih/vim-go'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'scrooloose/nerdtree'
