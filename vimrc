@@ -15,11 +15,11 @@ if !has("compatible")
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'bling/vim-airline'
   Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'davidhalter/jedi-vim'
   Plugin 'fatih/vim-go'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'
-  " Plugin 'Valloric/YouCompleteMe'
   Plugin 'vim-syntastic/syntastic'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
