@@ -14,6 +14,7 @@ if !has("compatible")
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'bling/vim-airline'
+  Plugin 'cknadler/vim-anywhere'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'ervandew/supertab'
   Plugin 'fatih/vim-go'
@@ -21,7 +22,6 @@ if !has("compatible")
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'
   Plugin 'vim-syntastic/syntastic'
-  Plugin 'cknadler/vim-anywhere'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
 endif
