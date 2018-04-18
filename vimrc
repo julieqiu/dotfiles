@@ -23,6 +23,7 @@ if !has("compatible")
   Plugin 'tpope/vim-fugitive'
   Plugin 'davidhalter/jedi-vim'
   Plugin 'vim-syntastic/syntastic'
+  Plugin 'cknadler/vim-anywhere'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
 endif
@@ -61,14 +62,16 @@ set t_Co=256            " 256 colors
 
 
 " Settings: Ctrl-P
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,.pyc,__pycache__
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
+let g:ctrlp_use_caching = 0
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
-" Ignore stuff with ctrl-p
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
-"CtrlP settings to make it find all files
+
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|git|svn))$'
+
 " ctrl-p speed ups
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .git
@@ -77,12 +80,13 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .DS_Store
       \ --ignore "**/*.pyc"
       \ -g ""'
-let g:ctrlp_working_path_mode = 'ra'
+
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_working_path_mode = 'r'
 " 'c' - the directory of the current file.
 " 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr
 " 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file.
 " 0 or '' (empty string) - disable this feature.
-nnoremap <C-b> :CtrlPBuffer <CR>
 
 
 " Settings: NERDTree
@@ -123,8 +127,8 @@ match ColorColumn /\%81v.\+/
 set cursorline          " highlight current line
 set lazyredraw          " redraw only when we need to.
 set nowrap              " don't wrap lines
-set number              " show line numbers
-set relativenumber      " show relative numbers
+" set number              " show line numbers
+" set relativenumber      " show relative numbers
 set showcmd             " show command in bottom bar
 set showmatch           " show matching parenthesis
 set wildmenu

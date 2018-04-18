@@ -72,5 +72,9 @@ stty ixoff -ixon
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
+#. "/usr/local/opt/nvm/nvm.sh"
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+
+# added by travis gem
+[ -f /Users/julie/.travis/travis.sh ] && source /Users/julie/.travis/travis.sh
