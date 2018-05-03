@@ -18,6 +18,7 @@ if !has("compatible")
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'ervandew/supertab'
   Plugin 'fatih/vim-go'
+  Plugin 'junegunn/fzf.vim'
   Plugin 'kien/rainbow_parentheses.vim'
   Plugin 'scrooloose/nerdtree'
   Plugin 'tpope/vim-fugitive'

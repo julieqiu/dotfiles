@@ -28,8 +28,6 @@ export PATH=$PATH:/usr/local/Cellar/go/1.6.2/libexec/bin
 
 ### ~~~ SHORTCUTS TO DIRECTORIES ~~~ ###
 alias tv='cd $CODE/theviewfromjq'
-alias cfps='~/Dropbox/Learning/WriteSpeakCode/Me-Speak/CFPs'
-alias python=python3
 
 
 ### ~~~ TERMINAL TOOLS ~~~ ###
@@ -44,16 +42,11 @@ alias ll="ls -lah"
 alias la="ls -A"
 alias c='clear'
 alias findspace="du -shc .??* *"
-alias zshmeasure="/usr/bin/time zsh -i -c exit"
-alias p='~/Code/pycon-2018-pyelasticsearch'
 
 
 ### ~~~ VIM TOOLS ~~~ ###
 alias vi='vim'
 alias vim='mvim -v'
-function n {
-    vim "$HOME/Dropbox/notes/$1"
-}
 
 
 ### ~~~ CONFIG FILES ~~~ ###
@@ -150,7 +143,6 @@ alias tss="b; cd tools/sql/suppliers"
 alias startcelery="celery -A celery_proj worker --loglevel=info"
 alias bpy3='source $PY3VENV'
 alias bpy2='source $SPRINGVENV'
-alias pyser='source python-serverless/bin/activate'
 alias spw='cd $BRANDED/py3/shopspring/personalization/workers'
 alias bpy3spw="bpy3; spw"
 alias bpyq3='bpy3; $BRANDED/py3/shopspring/pietl/qiu'
@@ -159,7 +151,8 @@ alias twigg='cd $BRANDED/py3/shopspring/search/twiggle/'
 
 ### ~~~ SPRING VM ~~~ ###
 alias vup='cd $HOME/springdev; vagrant up'
-alias vssh="cd ~/springdev; vagrant ssh -- -l springdev"
+alias vssh='cd $HOME/springdev; vagrant ssh -- -l springdev'
+
 
 ### ~~~ SPRING DATABASES & SERVERS ~~~ ###
 ### ~~~ SPRING MIGRATE ~~~ ###
@@ -279,8 +272,22 @@ notes() {
     echo $(date +"%Y-%m-%d %H:%M:%S") "$(cat)"  >> $HOME/Dropbox/Spring/notes.md
   fi
 }
-
-function gi() { curl -L -s "https://www.gitignore.io/api/$*" ;}
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 # added by travis gem
 [ -f /Users/julie/.travis/travis.sh ] && source /Users/julie/.travis/travis.sh
+
+
+function engmrp {
+    if [ "$1" == "-m" ]; then
+      RUNMODE=$2
+      shift
+      shift
+    else
+      RUNMODE="local"
+    fi
+    go run go/src/jello/exp/queuer_inject/queuer_inject.go --runMode $RUNMODE eng-merge-remote-product "{\"vendor_id\":$1,\"integration_id\":\"$2\"}"
+}
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
