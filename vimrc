@@ -126,7 +126,7 @@ match ColorColumn /\%81v.\+/
 set cursorline          " highlight current line
 set lazyredraw          " redraw only when we need to.
 set nowrap              " don't wrap lines
-" set number              " show line numbers
+set number              " show line numbers
 " set relativenumber      " show relative numbers
 set showcmd             " show command in bottom bar
 set showmatch           " show matching parenthesis
