@@ -9,4 +9,5 @@ export PROJECT_HOME="/Users/julie/Code/branded/py3"
 export FLASK_DEBUG=1
 ### End Python 3 environment initialization
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+alias loadrvm='[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' # Load RVM into a shell session *as a function*
+alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'

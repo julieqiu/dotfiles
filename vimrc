@@ -11,10 +11,10 @@ if !has("compatible")
   call vundle#begin()
 
   " let Vundle manage Vundle, required
+  Plugin 'Valloric/YouCompleteMe'
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'bling/vim-airline'
-  Plugin 'cknadler/vim-anywhere'
   Plugin 'ctrlpvim/ctrlp.vim'
   Plugin 'ervandew/supertab'
   Plugin 'fatih/vim-go'
@@ -120,7 +120,7 @@ autocmd BufWinLeave * call clearmatches()
 " Settings: Display
 set encoding=utf-8
 set gfn=Monaco:h18
-" set textwidth=79
+set textwidth=79
 highlight ColorColumn ctermfg=Red
 match ColorColumn /\%81v.\+/
 set cursorline          " highlight current line
@@ -218,20 +218,7 @@ nnoremap <Leader>m :lnext<CR>
 
 let g:ycm_server_python_interpreter = '/usr/bin/python'
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+noremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 set clipboard=unnamed
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-noremap <leader>g :Ag <cword><CR>
+let g:loaded_youcompleteme = 1

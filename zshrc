@@ -1,4 +1,3 @@
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -65,10 +64,10 @@ stty stop undef
 stty ixany
 stty ixoff -ixon
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # added by travis gem
-[ -f /Users/julie/.travis/travis.sh ] && source /Users/julie/.travis/travis.sh
+# [ -f /Users/julie/.travis/travis.sh ] && source /Users/julie/.travis/travis.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
