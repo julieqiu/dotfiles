@@ -1,9 +1,21 @@
+# alias go=go1.12beta2
 alias python=python3
 alias pip=pip3
+alias recipes='cd /Users/julie/Code/recipes; source venv/bin/activate; cd recipes'
+alias finances='cd /Users/julie/Code/github.com/finances; source venv/bin/activate; cd finances'
+alias go-finances='cd /Users/julie/go/src/github.com/julieqiu/go-finances'
+alias recipes_db='PGPASSWORD=$DB_RECIPES_PASSWORD psql -w -U $DB_RECIPES_USER -h recipes-db.crls45hrmyug.us-east-1.rds.amazonaws.com recipes_db'
+alias finances_db='PGPASSWORD=$DB_RECIPES_PASSWORD psql -w -U $DB_RECIPES_USER -h finances-db.crls45hrmyug.us-east-1.rds.amazonaws.com finances-db'
+alias jellolabs='~/Code/jellolabs/branded/py3/shopspring/common/models'
+alias r='/$HOME/go/src/github.com/julieqiu/go-recipes'
+alias f='/$HOME/go/src/github.com/julieqiu/finances'
+alias cb='/$HOME/go/src/github.com/julieqiu/cookbook'
+
+export GO111MODULE=on
 
 #
 # ALIASes
-#
+export GOPATH=$HOME/go:$HOME/bin:/usr/local/opt/go/libexec
 
 ### ~~~ SHORTCUTS TO DIRECTORIES ~~~ ###
 alias tv='cd $CODE/theviewfromjq'
@@ -117,11 +129,11 @@ notes() {
   if [ ! -z "$1" ]; then
     # Using the "$@" here will take all parameters passed into
     # this function so we can place everything into our file.
-    echo $(date +"%Y-%m-%d %H:%M:%S") $@  >> $HOME/Dropbox/Spring/notes.md
+    echo $(date +"%Y-%m-%d %H:%M:%S") $@  >> $HOME/Dropbox/notes.md
   else
     # If no arguments were passed we will take stdout and place
     # it into our notes instead.
-    echo $(date +"%Y-%m-%d %H:%M:%S") "$(cat)"  >> $HOME/Dropbox/Spring/notes.md
+    echo $(date +"%Y-%m-%d %H:%M:%S") "$(cat)"  >> $HOME/Dropbox/notes.md
   fi
 }
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
