@@ -63,11 +63,3 @@ stty erase '^?'
 stty stop undef
 stty ixany
 stty ixoff -ixon
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# added by travis gem
-# [ -f /Users/julie/.travis/travis.sh ] && source /Users/julie/.travis/travis.sh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
