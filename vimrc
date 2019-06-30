@@ -1,31 +1,17 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'junegunn/fzf'
+  Plug 'kien/rainbow_parentheses.vim'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-"" If we're not in vi-compatible mode, then load advanced VIM code
-"" like Bundles and colors
-if !has("compatible")
-  " Vundle code here
-  call vundle#begin()
-
-  " let Vundle manage Vundle, required
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'altercation/vim-colors-solarized'
-  Plugin 'bling/vim-airline'
-  Plugin 'ctrlpvim/ctrlp.vim'
-  Plugin 'ervandew/supertab'
-  Plugin 'fatih/vim-go'
-  Plugin 'junegunn/fzf.vim'
-  Plugin 'kien/rainbow_parentheses.vim'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'vim-syntastic/syntastic'
-  " All of your Plugins must be added before the following line
-  call vundle#end()            " required
-endif
+  " Initialize plugin system
+call plug#end()
 
 filetype plugin indent on
 " To ignore plugin indent changes, instead use:
@@ -43,6 +29,22 @@ filetype plugin indent on
 
 " My stuff
 
+" Settings: Go Configuration
+set autowrite " writes the content of the file automatically if you call :make
+" Shortcuts for the quickfix list
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+" run :GoRun
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+" run :GoTest
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" Set all lists to type quickfix
+let g:go_list_type = "quickfix"
+
 
 " Settings: Color Scheme
 " Change cursor shape between insert and normal mode in iTerm2.app
@@ -53,7 +55,7 @@ endif
 
 
 " Settings: Solarized
-set background=dark
+set background=light
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
 colorscheme solarized
@@ -86,10 +88,6 @@ let g:ctrlp_working_path_mode = 'r'
 " 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr
 " 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file.
 " 0 or '' (empty string) - disable this feature.
-
-
-" Settings: NERDTree
-nmap <C-n> :NERDTreeToggle <CR>
 
 
 " Settings: Rainbow Parentheses
@@ -204,21 +202,29 @@ autocmd FileType css setlocal shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 
-" less-css syntax highlighting
-au BufNewFile,BufRead *.less set filetype=less
-
-" Syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_mypy_args = '-s --incremental'
-let g:syntastic_python_pylint_args = '--rcfile=/Users/julie/Code/branded/py3/pylint.ini'
-
 nnoremap <Leader>n :ll<CR>
 nnoremap <Leader>m :lnext<CR>
 
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ycm_autoclose_preview_window_after_completion=1
-noremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 set clipboard=unnamed
-let g:loaded_youcompleteme = 1
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+" autozimu/LanguageClient-neovim: BEGIN
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ 'go': ['gopls']
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" Run gofmt and goimports on save
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+" autozimu/LanguageClient-neovim: END
