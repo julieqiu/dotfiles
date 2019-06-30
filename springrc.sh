@@ -6,7 +6,7 @@ export PY3VENV=$CODE/venv3/shopspring/bin/activate
 export SPRINGVENV=$CODE/spring-python2/bin/activate
 
 ### ~~~ Go  ~~~ ###
-export GOPATH=$HOME/go:$BRANDED/go:/usr/local/opt/go/libexec
+export GOPATH=$HOME/go:/usr/local/opt/go/libexec
 
 ### ~~~ Python 3 ~~~ ###
 export WORKON_HOME=$CODE/venv3
