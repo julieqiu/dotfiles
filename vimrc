@@ -54,7 +54,7 @@ endif
 
 
 " Settings: Solarized
-set background=light
+set background=dark
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
 colorscheme solarized
@@ -169,7 +169,7 @@ autocmd FileType sass setlocal shiftwidth=2 tabstop=2
 nnoremap <Leader>n :ll<CR>
 nnoremap <Leader>m :lnext<CR>
 
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
