@@ -30,9 +30,11 @@ echo_with_color() {
 echo_with_color "### Installing Homebrew" $BLUE
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-echo_with_color "### Installing VIM" $BLUE
-brew install vim
-brew install macvim
+
+echo_with_color "### Installing plugins with brew" $BLUE
+brew install cask
+brew cask install google-chrome iterm2
+brew install jq tree fzf vim macvim htop wget geoip watch python
 
 # Set up PlugInstall
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -43,6 +45,10 @@ brew install zsh
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew install zsh-syntax-highlighting
 brew install zsh-history-substring-search
+
+echo_with_color "### Installing ZSH theme: spaceship" $BLUE
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 echo_with_color "### Setting up symlinks" $BLUE
 -ln -s ~/dotfiles/bashrc ~/.bashrc
@@ -63,3 +69,6 @@ ssh-add -K ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 echo_with_color "### Opening GitHub to add a new SSH Key" $BLUE
 open https://github.com/settings/keys
+
+echo_with_color 'SET ZSH_THEME="spaceship"' $RED
+echo_with_color 'Download FiraCode: https://github.com/tonsky/FiraCode/tree/master/distr/ttf' $RED
