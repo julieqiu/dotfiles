@@ -230,7 +230,7 @@ set balloondelay=250
 " where there are quickfix errors. Some users who already show line number
 " might prefer to instead have the signs shown in the number column; in which
 " case set signcolumn=number
-set signcolumn=yes
+" set signcolumn=yes
 
 " Suggestion: Turn on syntax highlighting for .go files. You might prefer to
 " turn on syntax highlighting for all files, in which case
