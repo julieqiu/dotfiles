@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     \ 'do': 'bash install.sh',
     \ }
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'govim/govim'
   Plug 'junegunn/fzf'
 
   " Initialize plugin system
@@ -174,25 +175,6 @@ set clipboard^=unnamed,unnamedplus
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-" Settings: autozimu/LanguageClient-neovim: BEGIN
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-    \ 'go': ['gopls']
-    \ }
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-" Run gofmt and goimports on save
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-" autozimu/LanguageClient-neovim: END
-
 " Settings: Ctrl-P: BEGIN
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,.pyc,__pycache__
@@ -220,3 +202,50 @@ let g:ctrlp_working_path_mode = 'r'
 " 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file.
 " 0 or '' (empty string) - disable this feature.
 " Ctrl-P: BEGIN
+
+
+" go-vim
+
+" To get hover working in the terminal we need to set ttymouse. See
+"
+" :help ttymouse
+"
+" for the appropriate setting for your terminal. Note that despite the
+" automated tests using xterm as the terminal, a setting of ttymouse=xterm
+" does not work correctly beyond a certain column number (citation needed)
+" hence we use ttymouse=sgr
+set ttymouse=sgr
+
+" Suggestion: By default, govim populates the quickfix window with diagnostics
+" reported by gopls after a period of inactivity, the time period being
+" defined by updatetime (help updatetime). Here we suggest a short updatetime
+" time in order that govim/Vim are more responsive/IDE-like
+set updatetime=500
+
+" Suggestion: To make govim/Vim more responsive/IDE-like, we suggest a short
+" balloondelay
+set balloondelay=250
+
+" Suggestion: Turn on the sign column so you can see error marks on lines
+" where there are quickfix errors. Some users who already show line number
+" might prefer to instead have the signs shown in the number column; in which
+" case set signcolumn=number
+set signcolumn=yes
+
+" Suggestion: Turn on syntax highlighting for .go files. You might prefer to
+" turn on syntax highlighting for all files, in which case
+"
+" syntax on
+"
+" will suffice, no autocmd required.
+autocmd! BufEnter,BufNewFile *.go syntax on
+autocmd! BufLeave *.go syntax off
+
+" Suggestion: show info for completion candidates in a popup menu
+if has("patch-8.1.1904")
+  set completeopt+=popup
+  set completepopup=align:menu,border:off,highlight:Pmenu
+endif
+
+
+call govim#config#Set("FormatOnSave", "gofmt")
