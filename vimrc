@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'govim/govim'
   Plug 'junegunn/fzf'
+  Plug 'tpope/vim-fugitive'
 
   " Initialize plugin system
 call plug#end()
