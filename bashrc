@@ -7,7 +7,6 @@ alias go-finances='cd /Users/julie/go/src/github.com/julieqiu/go-finances'
 alias recipes_db='PGPASSWORD=$DB_RECIPES_PASSWORD psql -w -U $DB_RECIPES_USER -h recipes-db.crls45hrmyug.us-east-1.rds.amazonaws.com recipes_db'
 alias finances_db='PGPASSWORD=$DB_RECIPES_PASSWORD psql -w -U $DB_RECIPES_USER -h finances-db.crls45hrmyug.us-east-1.rds.amazonaws.com finances-db'
 alias jellolabs='~/Code/jellolabs/branded/py3/shopspring/common/models'
-alias r='/$HOME/go/src/github.com/julieqiu/go-recipes'
 alias f='/$HOME/go/src/github.com/julieqiu/finances'
 alias cb='/$HOME/go/src/github.com/julieqiu/cookbook'
 
