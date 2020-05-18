@@ -46,9 +46,9 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 brew install zsh-syntax-highlighting
 brew install zsh-history-substring-search
 
-echo_with_color "### Installing ZSH theme: spaceship" $BLUE
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+echo_with_color 'Downloading p10k' $RED
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 echo_with_color "### Setting up symlinks" $BLUE
 -ln -s ~/dotfiles/bashrc ~/.bashrc
@@ -69,6 +69,3 @@ ssh-add -K ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
 echo_with_color "### Opening GitHub to add a new SSH Key" $BLUE
 open https://github.com/settings/keys
-
-echo_with_color 'SET ZSH_THEME="spaceship"' $RED
-echo_with_color 'Download FiraCode: https://github.com/tonsky/FiraCode/tree/master/distr/ttf' $RED
