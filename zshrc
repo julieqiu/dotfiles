@@ -103,6 +103,15 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# turn on completion system
+autoload -Uz compinit && compinit
+# load bashcompinit for some old bash completions
+autoload bashcompinit && bashcompinit
+
+# partial completion suggestions
+zstyle ':completion:*' list-suffixes
+zstyle ':completion:*' expand prefix suffix
+
 ######################
 ## Aliases
 ######################
