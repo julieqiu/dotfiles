@@ -106,6 +106,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 ######################
 ## Aliases
 ######################
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
 export GO111MODULE=on
 export GOPATH=$HOME/go:$HOME/bin:/usr/local/opt/go/libexec
 
