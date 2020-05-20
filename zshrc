@@ -168,3 +168,5 @@ alias grn="git branch -m"
 alias procs="ps -ef | rg"
 # restart clipboard if it's being annoying
 alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
+
+source ~/.SECRET
