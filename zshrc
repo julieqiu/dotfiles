@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin/homebrew/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin/homebrew/bin:$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 ZSH_DISABLE_COMPFIX=true
 
 # Path to your oh-my-zsh installation.
@@ -87,15 +87,15 @@ fi
 # local machine: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 prompt_context(){}
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/julie/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julie/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/julie/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julie/google-cloud-sdk/completion.zsh.inc'; fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -173,6 +173,8 @@ alias gclean="git clean -fd"
 alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
 alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
 alias grn="git branch -m"
+alias gcm="git-codereview mail"
+alias diff='colordiff'
 
 ### ~~~ RANDOM ~~~ ###
 # search for processes by name
