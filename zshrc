@@ -115,7 +115,7 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
 export GO111MODULE=on
-export GOPATH=$HOME/go:$HOME/bin:/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
 
 # ALIASes
 alias pip=pip3
