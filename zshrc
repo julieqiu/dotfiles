@@ -146,6 +146,7 @@ alias gc="git checkout"
 alias gcp="git cherry-pick"
 alias gd='git diff'
 alias gf="git fetch"
+alias rb="git fetch; git reset --hard origin/master"
 alias ghist="log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 alias ga="git add"
 alias gm="git commit"
