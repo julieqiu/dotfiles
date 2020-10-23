@@ -170,8 +170,9 @@ alias gclean="git clean -fd"
 alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
 alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
 alias grn="git branch -m"
-alias gcm="git-codereview mail -trust -trybot"
+alias gcmt="git-codereview mail -trust -trybot"
 alias diff='colordiff'
+alias gcm="git-codereview mail"
 
 ### ~~~ RANDOM ~~~ ###
 # search for processes by name
