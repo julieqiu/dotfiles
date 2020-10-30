@@ -8,7 +8,8 @@ call plug#begin('~/.vim/plugged')
     \ }
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'govim/govim'
-  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-fugitive'
 
   " Initialize plugin system
@@ -238,29 +239,5 @@ set timeoutlen=1000 ttimeoutlen=0
 " -----------------------------------
 
 " Settings: Ctrl-P: BEGIN
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|darwin_amd64|dist)|(\.(swp|ico|git|svn))$'
-let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 0
-let g:ctrlp_map = '<c-p>'
-
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-
-" ctrl-p speed ups
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
-
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_working_path_mode = 'r'
-" 'c' - the directory of the current file.
-" 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr
-" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file.
-" 0 or '' (empty string) - disable this feature.
-" Ctrl-P: BEGIN
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
