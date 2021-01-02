@@ -7,9 +7,9 @@ call plug#begin('~/.vim/plugged')
     \ 'do': 'bash install.sh',
     \ }
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'govim/govim'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-fugitive'
 
   " Initialize plugin system
@@ -176,63 +176,6 @@ set clipboard^=unnamed,unnamedplus
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
-" -----------------------------------
-" go-vim
-" -----------------------------------
-
-" To get hover working in the terminal we need to set ttymouse. See
-"
-" :help ttymouse
-"
-" for the appropriate setting for your terminal. Note that despite the
-" automated tests using xterm as the terminal, a setting of ttymouse=xterm
-" does not work correctly beyond a certain column number (citation needed)
-" hence we use ttymouse=sgr
-set ttymouse=sgr
-
-" Suggestion: By default, govim populates the quickfix window with diagnostics
-" reported by gopls after a period of inactivity, the time period being
-" defined by updatetime (help updatetime). Here we suggest a short updatetime
-" time in order that govim/Vim are more responsive/IDE-like
-set updatetime=500
-
-" Suggestion: To make govim/Vim more responsive/IDE-like, we suggest a short
-" balloondelay
-set balloondelay=250
-
-" Suggestion: Turn on the sign column so you can see error marks on lines
-" where there are quickfix errors. Some users who already show line number
-" might prefer to instead have the signs shown in the number column; in which
-" case set signcolumn=number
-" If you already have line numbers shown, having an additional gutter to the
-" left for error signs (markers which correspond to errors in the quickfix
-" window) can take up valuable screen real estate. Instead, configure Vim to
-" show signs in the number column via:
-set signcolumn=number
-
-" Suggestion: Turn on syntax highlighting for .go files. You might prefer to
-" turn on syntax highlighting for all files, in which case
-" Note: set at top of file
-" syntax on
-"
-" will suffice, no autocmd required.
-autocmd! BufEnter,BufNewFile *.go syntax on
-autocmd! BufLeave *.go syntax off
-
-" Suggestion: show info for completion candidates in a popup menu
-if has("patch-8.1.1904")
-  set completeopt+=popup
-  set completepopup=align:menu,border:off,highlight:Pmenu
-endif
-
-call govim#config#Set("FormatOnSave", "gofmt")
-
-" @mvdan tracked down
-" [this article](https://www.johnhawthorn.com/2012/09/vi-escape-delays/) which
-" explains the reason behind the delay and also a simple fix by adding the
-" following to your .vimrc:
-set timeoutlen=1000 ttimeoutlen=0
 
 " -----------------------------------
 " CTRL-P
