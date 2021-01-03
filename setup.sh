@@ -34,7 +34,7 @@ echo_with_color "### Installing Homebrew" $BLUE
 echo_with_color "### Installing plugins with brew" $BLUE
 brew install cask
 brew cask install google-chrome iterm2
-brew install jq tree fzf vim macvim htop wget geoip watch python
+brew install jq tree fzf vim macvim htop wget geoip watch python node
 
 # Set up PlugInstall
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
