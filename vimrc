@@ -7,9 +7,9 @@ call plug#begin('~/.vim/plugged')
     \ 'do': 'bash install.sh',
     \ }
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-fugitive'
 
   " Initialize plugin system
