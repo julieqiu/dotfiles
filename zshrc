@@ -8,6 +8,8 @@ fi
 export PATH=$HOME/bin/homebrew/bin:$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 ZSH_DISABLE_COMPFIX=true
 
+export GO_DISCOVERY_CONFIG_DYNAMIC="/Users/julieqiu/go/src/golang.org/x/pkgsite/experiment.yaml"
+
 # Path to your oh-my-zsh installation.
 # export ZSH="$HOME/.oh-my-zsh"
 
@@ -87,12 +89,6 @@ prompt_context(){}
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -116,6 +112,7 @@ bindkey "^E" end-of-line
 
 export GO111MODULE=on
 export GOPATH=$HOME/go
+export GO_DISCOVERY_LOG_LEVEL=error
 
 # ALIASes
 alias pip=pip3
@@ -173,6 +170,8 @@ alias grn="git branch -m"
 alias diff='colordiff'
 alias gcm="git-codereview mail -trust -trybot"
 alias gcmm="git-codereview mail"
+alias worker="go run cmd/worker/main.go"
+alias frontend="go run cmd/frontend/main.go"
 
 ### ~~~ RANDOM ~~~ ###
 # search for processes by name
@@ -181,3 +180,9 @@ alias procs="ps -ef | rg"
 alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
 
 source ~/.SECRET
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc'; fi
