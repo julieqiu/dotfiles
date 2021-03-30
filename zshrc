@@ -5,7 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin/homebrew/bin:$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
+export PATH=$HOME/gotip/bin:$DEFAULT_PATH
+export DEFAULT_PATH=$HOME/bin/homebrew/bin:$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
 ZSH_DISABLE_COMPFIX=true
 
 export GO_DISCOVERY_CONFIG_DYNAMIC="/Users/julieqiu/go/src/golang.org/x/pkgsite/experiment.yaml"
