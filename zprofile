@@ -70,4 +70,5 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 # Setting PATH for Python 3.6
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/fzf/bin:${PATH}"
 export PATH
