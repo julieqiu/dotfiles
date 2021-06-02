@@ -7,8 +7,10 @@
 ```
 brew install cask
 brew cask install google-chrome iterm2
-brew install jq tree fzf vim macvim htop wget geoip watch python node tmux
+brew install jq tree fzf vim macvim htop wget geoip watch python node tmux bash
 ```
+
+* Install bash to [fix this](https://apple.stackexchange.com/questions/291287/globstar-invalid-shell-option-name-on-macos-even-with-bash-4-x)
 
 2. Install iTerm2: https://iterm2.com/downloads.html
 
