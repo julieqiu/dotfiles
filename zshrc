@@ -5,24 +5,23 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
-
-export PATH=$HOME/gotip/bin:$DEFAULT_PATH
-export DEFAULT_PATH=$HOME/bin/homebrew/bin:$HOME/bin:/usr/local/bin:$HOME/go/bin:$PATH
-ZSH_DISABLE_COMPFIX=true
-
-export GO_DISCOVERY_CONFIG_DYNAMIC="/Users/julieqiu/go/src/golang.org/x/pkgsite/experiment.yaml"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerline10k"
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -34,8 +33,14 @@ ZSH_THEME="powerline10k"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -47,6 +52,8 @@ ZSH_THEME="powerline10k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -66,13 +73,13 @@ ZSH_THEME="powerline10k"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -82,112 +89,27 @@ plugins=(
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Hide the “user@hostname” info when you’re logged in as yourself on your #
-# local machine: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-prompt_context(){}
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-# turn on completion system
-autoload -Uz compinit && compinit
-# load bashcompinit for some old bash completions
-autoload bashcompinit && bashcompinit
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# partial completion suggestions
-zstyle ':completion:*' list-suffixes
-zstyle ':completion:*' expand prefix suffix
-
-######################
-## Aliases
-######################
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-
-export GO111MODULE=on
-export GOPATH=$HOME/go
-export GO_DISCOVERY_LOG_LEVEL=error
-
-# ALIASes
-alias pip=pip3
-alias python=python3
-
-### ~~~ TERMINAL TOOLS ~~~ ###
-# Remove swp files
-alias rmswp='find . -name ".*.swp" -type f -delete; find . -name "*~" -type f -delete'
-# Remove tmp files
-alias rmtmp='find . -name "*tmp*.txt" -type f -delete; find . -name "*~" -type f -delete'
-# Find a file
-alias ff="find . | rg"
-# Shortcuts
-alias ll="ls -lah"
-alias la="ls -A"
-alias c='clear'
-alias findspace="du -shc .??* *"
-
-### ~~~ VIM TOOLS ~~~ ###
-alias vi='vim'
-alias vinstall="vim +PluginInstall +qall"
-
-### ~~~ Git Commands ~~~ ###
-alias gaa="git add -u"
-alias gb="git branch"
-alias grn="git branch -m"
-alias gc="git checkout"
-alias gcp="git cherry-pick"
-alias gd='git diff'
-alias gf="git fetch"
-alias rb="git fetch; git reset --hard origin/master"
-alias ghist="log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
-alias ga="git add"
-alias gm="git commit"
-alias gma="git commit --amend"
-alias gmm="git commit -m"
-alias gp="git push"
-alias gpo="git push origin"
-alias gpom="git push origin master"
-alias glog="git log"
-alias gpull='gf --prune; grom; git remote prune origin; migr;'
-alias gr="git rebase"
-alias grl="git reflog"
-alias grc="git rebase --continue"
-alias grh="git reset HEAD~"
-alias grom="git rebase origin/master"
-alias grhom="git reset --hard origin/master"
-alias grs="git rebase --skip"
-alias gs="git status"
-alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
-alias gclean="git clean -fd"
-alias wip="gaa; git commit -m 'work in progress (not ready for review)'"
-alias gdeleteall="git branch | grep -v 'master' | xargs git branch -D"
-alias grn="git branch -m"
-alias diff='colordiff'
-alias gcm="git-codereview mail -trust -trybot"
-alias gcmm="git-codereview mail"
-alias worker="go run cmd/worker/main.go"
-alias frontend="go run cmd/frontend/main.go"
-
-### ~~~ RANDOM ~~~ ###
-# search for processes by name
-alias procs="ps -ef | rg"
-# restart clipboard if it's being annoying
-alias restclip='launchctl stop com.apple.pboard && launchctl start com.apple.pboard'
-
-source ~/.SECRET
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc'; fi
+source ~/dotfiles/aliases.conf
+source ~/dotfiles/environment.conf
