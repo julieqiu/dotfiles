@@ -112,4 +112,5 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/dotfiles/aliases.conf
+source ~/dotfiles/pkgsite.conf
 source ~/dotfiles/environment.conf
