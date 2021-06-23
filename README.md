@@ -5,9 +5,31 @@
 1. Install Brew: https://brew.sh/
 
 ```
-brew install cask
-brew cask install google-chrome iterm2
-brew install jq tree fzf vim macvim htop wget geoip watch python node tmux bash ripgrep
+brew install \
+	bash \
+	colordiff \
+    coreutils \
+	docker \
+	docker-compose \
+	fzf \
+	geoip \
+	golang-migrate \
+	htop \
+	jq \
+	macvim \
+	node \
+	postgresql \
+	python \
+	ripgrep \
+	tmux \
+	tree \
+	vim \
+	watch \
+	wget \
+    docker \
+    google-chrome \
+    iterm2 \
+    tableplus
 ```
 
 * Install bash to [fix this](https://apple.stackexchange.com/questions/291287/globstar-invalid-shell-option-name-on-macos-even-with-bash-4-x)
