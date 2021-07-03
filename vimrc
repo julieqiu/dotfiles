@@ -180,3 +180,8 @@ set hidden
 " Settings: Ctrl-P: BEGIN
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
+
+" -----------------------------------
+" Typescript
+" -----------------------------------
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
