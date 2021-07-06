@@ -10,8 +10,13 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Setting PATH for Python 3.6
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-PATH="$HOME/bin/homebrew/bin:$HOME/bin/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin/homebrew/opt/fzf/bin:${PATH}"
 PATH="$HOME/gotip/bin:$HOME/go/bin:${PATH}"
+
+homebrew_dir=/opt/homebrew
+if [[ -d "$HOME/bin/homebrew" ]]; then
+  homebrew_dir=$HOME/bin/homebrew
+fi
+PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
