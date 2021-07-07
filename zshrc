@@ -18,6 +18,10 @@ if [[ -d "$HOME/bin/homebrew" ]]; then
 fi
 PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
 
+if [[ -d "$HOME/google-cloud-sdk/bin" ]]; then
+  PATH="${PATH}:$HOME/google-cloud-sdk/bin"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -119,7 +123,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
-
+[[ ! -f $HOME/dotfiles/SECRET ]] || source $HOME/dotfiles/SECRET
 [[ ! -f $HOME/dotfiles/SECRET ]] || source $HOME/dotfiles/SECRET
 [[ ! -f $HOME/dotfiles/google.conf ]] || source $HOME/dotfiles/google.conf
 
