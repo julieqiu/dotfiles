@@ -125,11 +125,11 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 [[ ! -f $HOME/dotfiles/SECRET ]] || source $HOME/dotfiles/SECRET
 [[ ! -f $HOME/dotfiles/google.conf ]] || source $HOME/dotfiles/google.conf
+[[ ! -f $HOME/powerlevel10k/powerlevel10k.zsh-theme ]] || source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 source $HOME/dotfiles/aliases.conf
 source $HOME/dotfiles/pkgsite.conf
 source $HOME/dotfiles/environment.conf
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
