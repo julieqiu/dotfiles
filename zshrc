@@ -138,3 +138,9 @@ if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieq
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc'; fi
+
+# To activate the syntax highlighting.
+source /Users/julieqiu/bin/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# To activate substring search.
+source /Users/julieqiu/bin/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh

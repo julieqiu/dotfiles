@@ -2,42 +2,114 @@
 
 ## Setting up a new laptop
 
-1. Install Brew: https://brew.sh/
+### Mac
+
+1. Install any software updates under System Preferences.
+2. Fix modifier keys and track pad.
+3. App Store Login
+3. Setup Divvy
+
+
+### Development
+
+1. Sign into [GitHub](https://github.com/login)
+
+2. Set up SSH Keys:
+
+- [Generating a new SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [Add a key](https://github.com/settings/keys)
+
+3. Clone dotfiles
+
+```
+git clone git@github.com:julieqiu/dotfiles.git
+```
+
+4. Run `./scripts/setup_dotfiles.sh`
+
+5. Install xcode
+
+```
+xcode-select --install
+```
+
+6. Install brew ([custom directory](https://github.com/Homebrew/brew/blob/664d0c67d5947605c914c4c56ebcfaa80cb6eca0/docs/Installation.md#untar-anywhere))
+
+```
+mkdir bin && mkdir bin/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 2 -C bin/homebrew
+```
+
+7. Install tmux
 
 ```
 brew install tmux
 ```
-- [install/app.sh](install/app.sh)
-- [install/cli.sh](install/cli.sh)
 
-* Install bash to [fix this](https://apple.stackexchange.com/questions/291287/globstar-invalid-shell-option-name-on-macos-even-with-bash-4-x)
+8. Run brew installs in a shell
 
-2. Install iTerm2: https://iterm2.com/downloads.html
+- [install/cask.sh](install/cask.sh)
+- [install/brew.sh](install/brew.sh)
 
-- Setup:
+* Note: brew install bash to [fix this](https://apple.stackexchange.com/questions/291287/globstar-invalid-shell-option-name-on-macos-even-with-bash-4-x)
+
+9. Setup iTerm2
 
   - Go to profiles -> Default ->
     - Terminal -> Check silence bell
     - Text -> 16pt Menlo
     - Colors -> Solarized Dark
 
-3. Set up SSH Keys:
+10. [Install vim-plug](https://github.com/junegunn/vim-plug#installation)
 
-- [Generating a new SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-- [Add a key](https://github.com/settings/keys)
-
-4. Set up ZSH
 ```
-brew install zsh
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim +PlugInstall +qall
+```
+
+11. [Install oh-my-zsh](https://ohmyz.sh/#install)
+
+```
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-brew install zsh-syntax-highlighting
-brew install zsh-history-substring-search
 ```
 
-5. Install powerllevel10k: https://github.com/romkatv/powerlevel10k
+12. [Install powerllevel10k](https://github.com/romkatv/powerlevel10k#manual)
 
-6. Symlink dotfiles
 ```
-ln -s ~/dotfiles/zshrc ~/.zshrc
-ln -s ~/dotfiles/vimrc ~/.vimrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+```
+
+14. [Install fzf bash](https://github.com/junegunn/fzf)
+
+```
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+```
+
+15. [Install docker app](https://docs.docker.com/docker-for-mac/install/)
+
+### Google Cloud
+
+- [Install google-cloud-sdk](https://cloud.google.com/sdk/docs/install)
+- [Install Cloud SQL Proxy](https://cloud.google.com/sql/docs/mysql/connect-admin-proxy#macos-64-bit)
+
+### Pkgsite
+
+- git-codreview
+
+```
+go get golang.org/x/review/git-codereview
+```
+
+- Login to Gerrit
+
+```
+https://golang.org/doc/contribute#config_git_auth
+```
+
+- Clone pkgsite repo
+
+```
+git clone https://go.googlesource.com/pkgsite
 ```
