@@ -5,32 +5,10 @@
 1. Install Brew: https://brew.sh/
 
 ```
-brew install \
-	bash \
-	colordiff \
-    coreutils \
-	docker \
-	docker-compose \
-	fzf \
-	geoip \
-	golang-migrate \
-	htop \
-	jq \
-	macvim \
-	node \
-	postgresql \
-	python \
-	ripgrep \
-	tmux \
-	tree \
-	vim \
-	watch \
-	wget \
-    docker \
-    google-chrome \
-    iterm2 \
-    tableplus
+brew install tmux
 ```
+- [install/app.sh](install/app.sh)
+- [install/cli.sh](install/cli.sh)
 
 * Install bash to [fix this](https://apple.stackexchange.com/questions/291287/globstar-invalid-shell-option-name-on-macos-even-with-bash-4-x)
 
