@@ -123,6 +123,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
+[[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
 [[ ! -f $HOME/dotfiles/SECRET ]] || source $HOME/dotfiles/SECRET
 [[ ! -f $HOME/dotfiles/google/google.conf ]] || source $HOME/dotfiles/google/google.conf
 [[ ! -f $HOME/dotfiles/google/SECRET ]] || source $HOME/dotfiles/google/SECRET
