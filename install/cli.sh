@@ -1,7 +1,7 @@
 brew install \
 	bash \
 	colordiff \
-    coreutils \
+	coreutils \
 	docker \
 	docker-compose \
 	fzf \
@@ -14,6 +14,7 @@ brew install \
 	postgresql \
 	python \
 	ripgrep \
+	terraform \
 	tree \
 	vim \
 	watch \
