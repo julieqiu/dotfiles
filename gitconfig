@@ -1,0 +1,17 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Julie Qiu
+	email = julie@golang.org
+# Please adapt and uncomment the following lines:
+#	name = Julie Qiu
+#	email = julieyeqiu@gmail.com
+[http]
+	cookiefile = /Users/julieqiu/.gitcookies
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+    branches = branch --list --format='%(HEAD) %(align:width=13,position=left)%(committerdate:relative)%(end) %(align:width=30,position=left)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:yellow)%(end)%(refname:short)%(color:reset)%(end) %(subject)'
+    recent-branches = branches --sort=-committerdate
