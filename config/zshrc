@@ -129,9 +129,9 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f $HOME/dotfiles/google/SECRET ]] || source $HOME/dotfiles/google/SECRET
 [[ ! -f $HOME/powerlevel10k/powerlevel10k.zsh-theme ]] || source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
-source $HOME/dotfiles/aliases.conf
-source $HOME/dotfiles/pkgsite.conf
-source $HOME/dotfiles/environment.conf
+source $HOME/dotfiles/config/aliases.conf
+source $HOME/dotfiles/config/pkgsite.conf
+source $HOME/dotfiles/config/environment.conf
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/path.zsh.inc'; fi
