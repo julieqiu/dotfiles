@@ -1,0 +1,23 @@
+# Copyright 2021 The Go Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+version: '3.4'
+
+services:
+  db:
+    image: postgres:11.12
+    environment:
+      LANG: C
+      POSTGRES_DB: $USER
+      POSTGRES_USER: $USER
+    ports:
+        - 5432:5432
+  nodejs:
+    image: node:14.17.0
+  go:
+    image: golang:1.15.5
+    entrypoint: go
+    volumes:
+      - gomodcache:/gomodcache
+volumes:
+  gomodcache:
