@@ -124,3 +124,9 @@ echo $HISTFILE
 # Push file
 cat .bash_history.old $HISTFILE | sponge $HISTFILE
 ```
+
+## Personal Laptop
+
+- Run `install.sh/me.sh`
+- [Download](https://1password.com/downloads/mac) [1Password4](https://cache.agilebits.com/dist/1P/mac4/1Password-4.4.3.zip)
+- [Download Remarkable2 App](https://my.remarkable.com)
