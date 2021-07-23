@@ -10,6 +10,7 @@ brew install \
 	htop \
 	jq \
 	macvim \
+    moreutils \
 	node \
 	python \
 	ripgrep \

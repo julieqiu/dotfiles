@@ -114,3 +114,13 @@ https://golang.org/doc/contribute#config_git_auth
 ```
 git clone https://go.googlesource.com/pkgsite
 ```
+
+### History
+
+- [Transfer bash/zsh history](https://askubuntu.com/questions/652305/how-can-i-transfer-my-bash-history-to-a-new-system)
+
+```
+echo $HISTFILE
+# Push file
+cat .bash_history.old $HISTFILE | sponge $HISTFILE
+```
