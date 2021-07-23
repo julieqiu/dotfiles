@@ -55,9 +55,10 @@ brew install tmux
 9. Setup iTerm2
 
   - Go to profiles -> Default ->
-    - Terminal -> Check silence bell
-    - Text -> 16pt Menlo
     - Colors -> Solarized Dark
+    - Text -> 16pt Menlo
+    - Terminal -> Unlimited scrollback
+    - Terminal -> Check silence bell
 
 10. [Install vim-plug](https://github.com/junegunn/vim-plug#installation)
 
