@@ -90,6 +90,22 @@ $(brew --prefix)/opt/fzf/install
 
 15. [Install docker app](https://docs.docker.com/docker-for-mac/install/)
 
+### Fonts
+
+- [Install Powerline Fonts](https://github.com/powerline/fonts)
+
+```
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
+
+
 ### Google Cloud
 
 - [Install google-cloud-sdk](https://cloud.google.com/sdk/docs/install)
