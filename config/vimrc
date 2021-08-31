@@ -185,3 +185,16 @@ nnoremap <leader>pf :Files<CR>
 " Typescript
 " -----------------------------------
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+
+" -----------------------------------
+" vim-go
+" -----------------------------------
+
+" print extra logs
+let g:go_debug=['shell-commands']
+
+let g:go_fmt_command = "gofmt"
+
+" godef should be faster than guru, which is the default.
+" https://github.com/fatih/vim-go/issues/2078#issuecomment-442652950
+let g:go_def_mode='godef'
