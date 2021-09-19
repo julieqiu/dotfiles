@@ -12,10 +12,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 PATH="$HOME/gotip/bin:$HOME/go/bin:${PATH}"
 
-homebrew_dir=/opt/homebrew
-if [[ -d "$HOME/bin/homebrew" ]]; then
-  homebrew_dir=$HOME/bin/homebrew
-fi
+homebrew_dir=$HOME/bin/homebrew
 PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
 
 if [[ -d "$HOME/google-cloud-sdk/bin" ]]; then
@@ -150,3 +147,5 @@ else
   source $HOME/dotfiles/config/linux.conf
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
