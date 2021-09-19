@@ -1,3 +1,4 @@
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 rm -f $HOME/.gitconfig
 rm -f $HOME/.p10k.zsh
 rm -f $HOME/.vimrc
