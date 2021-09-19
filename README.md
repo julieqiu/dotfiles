@@ -7,7 +7,8 @@
 1. Install any software updates under System Preferences.
 2. Fix modifier keys and track pad.
 3. App Store Login
-3. Setup Divvy
+4. Setup Divvy
+5. Install XCode
 
 
 ### Development
@@ -27,34 +28,35 @@ git clone git@github.com:julieqiu/dotfiles.git
 
 4. Run `./scripts/setup_dotfiles.sh`
 
-5. Install xcode
+
+5. Install brew ([custom directory](https://github.com/Homebrew/brew/blob/664d0c67d5947605c914c4c56ebcfaa80cb6eca0/docs/Installation.md#untar-anywhere))
 
 ```
-xcode-select --install
-```
-
-6. Install brew ([custom directory](https://github.com/Homebrew/brew/blob/664d0c67d5947605c914c4c56ebcfaa80cb6eca0/docs/Installation.md#untar-anywhere))
+mkdir bin && mkdir bin/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C bin/homebrew
 
 ```
-mkdir bin && mkdir bin/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 2 -C bin/homebrew
-```
 
-7. Install tmux
+6. Install tmux
 
 ```
 brew install tmux
 ```
 
-8. Run brew installs in a shell
+7. Run `./install/cask.sh` in tmux
 
 - [install/cask.sh](install/cask.sh)
+
+8. Run `./install/brew.sh` in tmux
+
 - [install/brew.sh](install/brew.sh)
 
 * Note: brew install bash to [fix this](https://apple.stackexchange.com/questions/291287/globstar-invalid-shell-option-name-on-macos-even-with-bash-4-x)
 
 9. Setup iTerm2
 
-  - Go to profiles -> Default ->
+  - General -> Selection
+    - Check "Application in terminal may access clipboard"
+  - Profiles -> Default ->
     - Colors -> Solarized Dark
     - Text -> 16pt Menlo
     - Terminal -> Unlimited scrollback
