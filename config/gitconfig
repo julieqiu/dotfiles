@@ -6,7 +6,7 @@
 #	name = Julie Qiu
 #	email = julieyeqiu@gmail.com
 [http]
-	cookiefile = /Users/julieqiu/.gitcookies
+	cookiefile = /Users/$USER/.gitcookies
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -15,3 +15,5 @@
 [alias]
     branches = branch --list --format='%(HEAD) %(align:width=13,position=left)%(committerdate:relative)%(end) %(align:width=30,position=left)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:yellow)%(end)%(refname:short)%(color:reset)%(end) %(subject)'
     recent-branches = branches --sort=-committerdate
+[init]
+	defaultBranch = main
