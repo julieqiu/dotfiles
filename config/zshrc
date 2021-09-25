@@ -138,7 +138,7 @@ if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # To activate the syntax highlighting.
-  source /Users/julieqiu/bin/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source $homebrew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
   # To activate substring search.
   [[ ! -f "$HOME/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ]] ||
@@ -149,3 +149,4 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /Users/julie/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
