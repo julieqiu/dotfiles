@@ -2,7 +2,6 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
   Plug 'altercation/vim-colors-solarized'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -178,8 +177,11 @@ set hidden
 " -----------------------------------
 
 " Settings: Ctrl-P: BEGIN
+" nnoremap <C-p> :FZF<cr>
 nnoremap <C-p> :GFiles<CR>
-nnoremap <leader>pf :Files<CR>
+let g:fzf_layout = { 'down': '~40%' }
+" nnoremap <leader>pf :Files<CR>
+
 
 " -----------------------------------
 " Typescript
@@ -191,7 +193,7 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 " -----------------------------------
 
 " print extra logs
-let g:go_debug=['shell-commands']
+" let g:go_debug=['shell-commands']
 
 let g:go_fmt_command = "gofmt"
 
