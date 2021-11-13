@@ -7,8 +7,9 @@
 1. Install any software updates under System Preferences.
 2. Fix modifier keys and track pad.
 3. App Store Login
-4. Setup Divvy
+4. Setup Divvy (Privacy -> Accessibility)
 5. Install XCode
+6. Download 1Password: https://1password.com/downloads/mac
 
 
 ### Development
