@@ -108,7 +108,6 @@ cd ..
 rm -rf fonts
 ```
 
-
 ### Google Cloud
 
 - [Install google-cloud-sdk](https://cloud.google.com/sdk/docs/install)

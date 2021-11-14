@@ -9,7 +9,6 @@ brew install \
 	go \
 	htop \
 	jq \
-	macvim \
     moreutils \
 	node \
 	python \
