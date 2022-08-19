@@ -11,6 +11,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 PATH="$HOME/gotip/bin:$HOME/go/bin:${PATH}"
+PATH="/Library/Python/3.9/bin:$HOME/go/bin:${PATH}"
 
 homebrew_dir=$HOME/bin/homebrew
 PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
@@ -143,15 +144,23 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/dotfiles/config/aliases.conf
 source $HOME/dotfiles/config/pkgsite.conf
+source $HOME/dotfiles/config/vulndb.conf
 source $HOME/dotfiles/config/environment.conf
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/julieqiu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/$USER/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/$USER/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/julieqiu/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/$USER/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/$USER/google-cloud-sdk/completion.zsh.inc'; fi
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # To activate the syntax highlighting.
+  source $homebrew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+  # To activate substring search.
+  [[ ! -f "$HOME/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ]] ||
+  source /Users/$USER/bin/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+else if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   source $HOME/dotfiles/config/linux.conf
 fi
 

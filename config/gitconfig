@@ -6,7 +6,7 @@
 #	name = Julie Qiu
 #	email = julieyeqiu@gmail.com
 [http]
-	cookiefile = /Users/$USER/.gitcookies
+	cookiefile = /Users/julieqiu/.gitcookies
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
