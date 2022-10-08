@@ -12,6 +12,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 PATH="$HOME/gotip/bin:$HOME/go/bin:${PATH}"
 PATH="/Library/Python/3.9/bin:$HOME/go/bin:${PATH}"
+PATH="${PATH}:$HOME/flutter/bin"
 
 homebrew_dir=$HOME/bin/homebrew
 PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
