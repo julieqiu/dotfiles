@@ -148,3 +148,17 @@ cat .bash_history.old $HISTFILE | sponge $HISTFILE
 - Run `install.sh/me.sh`
 - [Download](https://1password.com/downloads/mac) [1Password4](https://cache.agilebits.com/dist/1P/mac4/1Password-4.4.3.zip)
 - [Download Remarkable2 App](https://my.remarkable.com)
+
+## Go version
+https://go.dev/doc/manage-install
+
+```
+$ go install golang.org/dl/go1.10.7@latest
+$ go1.10.7 download
+```
+```
+ln -s $HOME/sdk/go1.10.7 $HOME/go/current
+```
+```
+PATH=/Users/julieqiu/go/current/bin:${PATH}
+```
