@@ -16,6 +16,7 @@ PATH="${PATH}:$HOME/flutter/bin"
 
 homebrew_dir=$HOME/bin/homebrew
 PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
+PATH=/Users/julieqiu/go/current/bin:${PATH}
 
 if [[ -d "$HOME/google-cloud-sdk/bin" ]]; then
   PATH="${PATH}:$HOME/google-cloud-sdk/bin"
