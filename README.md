@@ -113,6 +113,14 @@ rm -rf fonts
 - [Install google-cloud-sdk](https://cloud.google.com/sdk/docs/install)
 - [Install Cloud SQL Proxy](https://cloud.google.com/sql/docs/mysql/connect-admin-proxy#macos-64-bit)
 
+### Protobufs
+
+```
+brew install protobuf
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+```
+
 ### Pkgsite
 
 - git-codreview
