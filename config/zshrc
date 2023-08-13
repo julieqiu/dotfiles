@@ -167,7 +167,7 @@ if [ -f "$cloudsdk_dir/completion.zsh.inc" ]; then . "$cloudsdk_dir/completion.z
 [[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
 [[ ! -f $HOME/.SECRET ]] || source $HOME/.SECRET
 [[ ! -f $code_dir/google/google.conf ]] || source $code_dir/google/google.conf
-[[ ! -f $HOME/powerlevel10k/powerlevel10k.zsh-theme ]] || source $HOME/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f $code_dir/powerlevel10k/powerlevel10k.zsh-theme ]] || source $code_dir/powerlevel10k/powerlevel10k.zsh-theme
 
 source $HOME/code/dotfiles/config/aliases.conf
 source $HOME/code/dotfiles/config/environment.conf
