@@ -161,20 +161,21 @@ if [ -f "$cloudsdk_dir/completion.zsh.inc" ]; then . "$cloudsdk_dir/completion.z
 # -----------------------------------
 # Configs
 # -----------------------------------
+local dotfiles_dir=$code_dir/dotfiles
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 [[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
 [[ ! -f $HOME/.SECRET ]] || source $HOME/.SECRET
-[[ ! -f $code_dir/google/google.conf ]] || source $code_dir/google/google.conf
-[[ ! -f $code_dir/powerlevel10k/powerlevel10k.zsh-theme ]] || source $code_dir/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f $dotfiles_dir/google/google.conf ]] || source $code_dir/google/google.conf
 
-source $HOME/code/dotfiles/config/aliases.conf
-source $HOME/code/dotfiles/config/environment.conf
-source $HOME/code/dotfiles/config/finances.conf
-source $HOME/code/dotfiles/config/gotip.conf
-source $HOME/code/dotfiles/config/pkgsite.conf
+source $dotfiles_dir/powerlevel10k/powerlevel10k.zsh-theme
+source $dotfiles_dir/config/aliases.conf
+source $dotfiles_dir/config/environment.conf
+source $dotfiles_dir/config/finances.conf
+source $dotfiles_dir/config/gotip.conf
+source $dotfiles_dir/config/pkgsite.conf
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  source $HOME/code/dotfiles/config/linux.conf
+  source $dotfiles_dir/config/linux.conf
 fi
