@@ -2,3 +2,5 @@ SECRET
 google
 config/gitconfig
 powerlevel10k/
+config/google.conf
+p10k.zsh
