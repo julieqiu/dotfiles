@@ -2,9 +2,6 @@
 [user]
 	name = Julie Qiu
 	email = julie@golang.org
-# Please adapt and uncomment the following lines:
-#	name = Julie Qiu
-#	email = julieyeqiu@gmail.com
 [http]
 	cookiefile = /Users/julieqiu/.gitcookies
 [filter "lfs"]
