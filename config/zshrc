@@ -167,7 +167,7 @@ local dotfiles_dir=$code_dir/dotfiles
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 [[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
 [[ ! -f $HOME/.SECRET ]] || source $HOME/.SECRET
-[[ ! -f $dotfiles_dir/google/google.conf ]] || source $code_dir/google/google.conf
+[[ ! -f $dotfiles_dir/google/google.conf ]] || source $dotfiles_dir/google/google.conf
 
 source $dotfiles_dir/powerlevel10k/powerlevel10k.zsh-theme
 source $dotfiles_dir/config/aliases.conf
@@ -179,3 +179,6 @@ source $dotfiles_dir/config/pkgsite.conf
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   source $dotfiles_dir/config/linux.conf
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
