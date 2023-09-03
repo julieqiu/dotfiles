@@ -1,3 +1,6 @@
+" -----------------------------------
+" Plugins
+" -----------------------------------
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
@@ -9,7 +12,9 @@ call plug#begin('~/.vim/plugged')
 " Initialize plugin system
 call plug#end()
 
+" -----------------------------------
 " Settings: General
+" -----------------------------------
 syntax on
 syntax enable           " enable syntax processing
 let mapleader = "\<Space>"
@@ -47,7 +52,9 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 let g:go_list_type = "quickfix"
 
 
+" -----------------------------------
 " Settings: Color Scheme
+" -----------------------------------
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
@@ -55,7 +62,9 @@ if $TERM_PROGRAM =~ "iTerm"
 endif
 
 
+" -----------------------------------
 " Settings: Solarized
+" -----------------------------------
 set background=dark
 let g:solarized_termtrans = 1
 let g:solarized_termcolors=16
@@ -63,7 +72,9 @@ colorscheme solarized
 set t_Co=256            " 256 colors
 
 
+" -----------------------------------
 " Settings: Remove trailing whitespace
+" -----------------------------------
 autocmd BufWritePre * :%s/\s\+$//e
 " highlight trailing whitespace characters
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
@@ -75,7 +86,9 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 
+" -----------------------------------
 " Settings: Display
+" -----------------------------------
 set encoding=utf-8
 set gfn=Monaco:h18
 set textwidth=79
@@ -92,7 +105,9 @@ set wildmenu
 set ruler
 
 
+" -----------------------------------
 " Settings: Navigation
+" -----------------------------------
 set splitbelow
 set splitright
 nnoremap <C-a> <S-^>
@@ -101,7 +116,9 @@ nnoremap j gj
 nnoremap k gk
 
 
+" -----------------------------------
 " Settings: Mouse & Scrolling
+" -----------------------------------
 set mouse=a
 nnoremap <2-LeftMouse> <nop>
 inoremap <2-LeftMouse> <nop>
@@ -112,24 +129,9 @@ nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
 
 
-" Settings: Typing
-set autoindent
-set backspace=2
-set copyindent		" copy structure of existing lines indent
-set paste
-set smartindent
-filetype indent on
-set sts=4 sw=4 ts=4 et
-" nnoremap <C-s-v> :set paste <CR><Insert>
-nnoremap <S-Enter> i<Enter><Esc>
-" When using << or >> to shift indents, line the text up to the next logical
-" indentation rather than just a hard indent. E.g., if a line is two spaces off
-" and indent is supposed to be four spaces, >> will fix it, but only if
-" shiftwidth is set. Otherwise it would just move it four spaces to the right.
-set shiftround
-
-
+" -----------------------------------
 " Settings: Search
+" -----------------------------------
 set hlsearch
 set incsearch
 nmap <silent> ,/ :nohlsearch<CR>
@@ -143,7 +145,30 @@ set nostartofline
 set ignorecase
 set smartcase
 
+" -----------------------------------
+" Settings: Typing
+" -----------------------------------
+set autoindent
+set backspace=2
+set copyindent		" copy structure of existing lines indent
+set smartindent
+filetype indent on
+set sts=4 sw=4 ts=4 et
+" nnoremap <C-s-v> :set paste <CR><Insert>
+nnoremap <S-Enter> i<Enter><Esc>
+" When using << or >> to shift indents, line the text up to the next logical
+" indentation rather than just a hard indent. E.g., if a line is two spaces off
+" and indent is supposed to be four spaces, >> will fix it, but only if
+" shiftwidth is set. Otherwise it would just move it four spaces to the right.
+set shiftround
+
+" Disabled because it causes issues with GitHub Copilot.
+" https://superuser.com/questions/437730/always-use-set-paste-is-it-a-good-idea
+" set paste
+
+" -----------------------------------
 " Edit Buffers
+" -----------------------------------
 nnoremap <leader>w :w<CR>
 nnoremap <leader>e :edit<Space>
 " Show the buffer number in the status line.
@@ -170,17 +195,6 @@ set clipboard^=unnamed,unnamedplus
 
 " Required for operations modifying multiple buffers like rename.
 set hidden
-
-" -----------------------------------
-" CTRL-P
-" -----------------------------------
-
-" Settings: Ctrl-P: BEGIN
-" nnoremap <C-p> :FZF<cr>
-nnoremap <C-p> :GFiles<CR>
-let g:fzf_layout = { 'down': '~40%' }
-" nnoremap <leader>pf :Files<CR>
-
 
 " -----------------------------------
 " Typescript
