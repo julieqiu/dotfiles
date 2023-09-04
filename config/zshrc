@@ -132,7 +132,7 @@ export PATH=$code_dir/bin:/usr/local/bin:$PATH
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
 # Use go in go/current/bin/, then code/gotip/bin, then code/go/bin, then Homebrew version
-PATH="$HOME/go/current/bin:$code_dir/gotip/bin:$code_dir/go/bin:${PATH}"
+PATH="$HOME/go/current/bin:$code_dir/gotip/bin:$HOME/go/bin:${PATH}"
 
 # -----------------------------------
 # Homebrew
@@ -152,7 +152,7 @@ fi
 # -----------------------------------
 # Cloud SDK
 # -----------------------------------
-local cloudsdk_dir=$code_dir/google-cloud-sdk
+local cloudsdk_dir=$HOME/bin/google-cloud-sdk
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$cloudsdk_dir/path.zsh.inc" ]; then . "$cloudsdk_dir/path.zsh.inc"; fi
 # The next line enables shell command completion for gcloud.
