@@ -175,6 +175,7 @@ source $dotfiles_dir/config/environment.conf
 source $dotfiles_dir/config/finances.conf
 source $dotfiles_dir/config/gotip.conf
 source $dotfiles_dir/config/pkgsite.conf
+source $HOME/.cargo/bin
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   source $dotfiles_dir/config/linux.conf
