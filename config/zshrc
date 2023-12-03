@@ -125,7 +125,7 @@ source $ZSH/oh-my-zsh.sh
 # PATH
 # -----------------------------------
 local code_dir=$HOME/code
-export PATH=$code_dir/bin:/usr/local/bin:$PATH
+export PATH=$code_dir/bin:/usr/local/bin:/Users/julieqiu/Library/Python/3.11/bin:$PATH
 
 # Setting PATH for Python 3.6
 # The original version is saved in .zprofile.pysave
