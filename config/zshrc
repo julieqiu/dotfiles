@@ -132,7 +132,7 @@ export PATH=$code_dir/bin:/usr/local/bin:/Users/julieqiu/Library/Python/3.11/bin
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
 # Use go in go/current/bin/, then code/gotip/bin, then code/go/bin, then Homebrew version
-PATH="$HOME/go/current/bin:$code_dir/gotip/bin:$HOME/go/bin:${PATH}"
+PATH="/Users/julieqiu/Library/Python/3.11/bin:$HOME/go/current/bin:$code_dir/gotip/bin:$HOME/go/bin:${PATH}"
 
 # -----------------------------------
 # Homebrew
@@ -183,3 +183,5 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias git-fetch='git checkout main && git remote -v | grep upstream && git fetch origin --prune && git fetch upstream --prune && git rebase upstream/main && git push origin main && git push origin main --tags'
