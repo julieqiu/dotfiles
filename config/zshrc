@@ -183,5 +183,3 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias git-fetch='git checkout main && git remote -v | grep upstream && git fetch origin --prune && git fetch upstream --prune && git rebase upstream/main && git push origin main && git push origin main --tags'

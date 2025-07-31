@@ -4,13 +4,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'altercation/vim-colors-solarized'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'github/copilot.vim'
   Plug 'junegunn/fzf.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'python-mode/python-mode'
-  Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-  Plug 'rust-lang/rust.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'dense-analysis/ale'
   " post install (yarn install | npm install) then load plugin only for editing supported files
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install --frozen-lockfile --production',
