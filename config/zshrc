@@ -166,7 +166,6 @@ local dotfiles_dir=$code_dir/dotfiles
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 [[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
-[[ ! -f $HOME/.SECRET ]] || source $HOME/.SECRET
 [[ ! -f $dotfiles_dir/google/google.conf ]] || source $dotfiles_dir/google/google.conf
 
 source $dotfiles_dir/powerlevel10k/powerlevel10k.zsh-theme
