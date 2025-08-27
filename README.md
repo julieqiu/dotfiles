@@ -121,26 +121,6 @@ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 ```
 
-### Pkgsite
-
-- git-codreview
-
-```
-go get golang.org/x/review/git-codereview
-```
-
-- Login to Gerrit
-
-```
-https://golang.org/doc/contribute#config_git_auth
-```
-
-- Clone pkgsite repo
-
-```
-git clone https://go.googlesource.com/pkgsite
-```
-
 ### History
 
 - [Transfer bash/zsh history](https://askubuntu.com/questions/652305/how-can-i-transfer-my-bash-history-to-a-new-system)
