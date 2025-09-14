@@ -8,78 +8,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # -----------------------------------
 # Oh-my-zsh
 # -----------------------------------
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   colored-man-pages
   copyfile
@@ -95,90 +33,39 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # -----------------------------------
 # PATH
 # -----------------------------------
 local code_dir=$HOME/code
-export PATH=$code_dir/bin:/usr/local/bin:/Users/julieqiu/Library/Python/3.11/bin:$PATH
-
-# Setting PATH for Python 3.6
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-
-# Use go in go/current/bin/, then code/gotip/bin, then code/go/bin, then Homebrew version
-PATH="/Users/julieqiu/Library/Python/3.11/bin:$HOME/go/current/bin:$code_dir/gotip/bin:$HOME/go/bin:${PATH}"
-
-# -----------------------------------
-# Homebrew
-# -----------------------------------
 local homebrew_dir=$HOME/bin/homebrew
-PATH="$homebrew_dir/bin:$hombrew_dir/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$homebrew_dir/opt/fzf/bin:${PATH}"
+local cloudsdk_dir=$HOME/bin/google-cloud-sdk
 
+export PATH=$code_dir/bin:$PATH
+export PATH=$homebrew_dir/bin:$homebrew_dir/sbin:$homebrew_dir/opt/fzf/bin:$PATH
+export PATH=$HOME/go/current/bin:$code_dir/gotip/bin:$HOME/go/bin:$PATH
+export PATH=/Users/julieqiu/Library/Python/3.11/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+
+# -----------------------------------
+# Sourced Configs
+# -----------------------------------
+# Google Cloud SDK
+if [ -f "$cloudsdk_dir/path.zsh.inc" ]; then . "$cloudsdk_dir/path.zsh.inc"; fi
+if [ -f "$cloudsdk_dir/completion.zsh.inc" ]; then . "$cloudsdk_dir/completion.zsh.inc"; fi
+
+# Syntax highlighting and substring search
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  # To activate the syntax highlighting.
   source $homebrew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-  # To activate substring search.
-  [[ ! -f "$homebrew_dir/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ]] ||
   source $homebrew_dir/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
 
-# -----------------------------------
-# Cloud SDK
-# -----------------------------------
-local cloudsdk_dir=$HOME/bin/google-cloud-sdk
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$cloudsdk_dir/path.zsh.inc" ]; then . "$cloudsdk_dir/path.zsh.inc"; fi
-# The next line enables shell command completion for gcloud.
-if [ -f "$cloudsdk_dir/completion.zsh.inc" ]; then . "$cloudsdk_dir/completion.zsh.inc"; fi
-
-# -----------------------------------
-# Configs
-# -----------------------------------
+# Custom dotfiles
 local dotfiles_dir=$code_dir/dotfiles
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
-[[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
-[[ ! -f $dotfiles_dir/google/google.conf ]] || source $dotfiles_dir/google/google.conf
-
 source $dotfiles_dir/powerlevel10k/powerlevel10k.zsh-theme
 source $dotfiles_dir/config/aliases.conf
-source $dotfiles_dir/config/environment.conf
-source $dotfiles_dir/config/finances.conf
-source $dotfiles_dir/config/gotip.conf
-source $dotfiles_dir/config/pkgsite.conf
-source $HOME/.cargo/bin
+[[ ! -f $HOME/.fzf.zsh ]] || source $HOME/.fzf.zsh
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  source $dotfiles_dir/config/linux.conf
+  alias pbcopy="xsel — clipboard — input"
+  alias pbpaste="xsel — clipboard — output"
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
