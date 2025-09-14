@@ -3,6 +3,11 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with
 code in this repository.
 
+## Writing Guidelines
+
+When writing, use simple English language. Follow guidelines from  William
+Zinsser's "On Writing Well."
+
 ## Go Development Guidelines
 
 Follow these principles when writing Go code, based on Russ Cox's philosophy
