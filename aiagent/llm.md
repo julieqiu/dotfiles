@@ -3,10 +3,44 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with
 code in this repository.
 
-## Writing Guidelines
+## Writing Design Documents
 
-When writing, use simple English language. Follow guidelines from  William
-Zinsser's "On Writing Well."
+When writing design documents, follow these principles:
+
+### Structure
+Use these sections in order:
+- Objective
+- Background
+- Overview
+- Detailed Design
+- Alternatives Considered
+
+### Writing Style
+- Use simple English language following William Zinsser's "On Writing Well"
+- Focus on explaining "why" for every design decision
+- Be direct and concrete. Avoid technical jargon when simpler words work
+- Use present tense ("implements" not "implemented")
+- Keep sentences short and clear
+
+### Objective Section
+- One sentence maximum
+- State what the document proposes to build or change
+- Example: "Allow users to control which gcloud commands the gcloud-mcp server executes"
+
+### Background Section
+- Explain the current state and its limitations
+- Show specific user needs with concrete examples
+- Reference relevant issues or requests
+- End with: "This document proposes [solution] to [enable/solve] [these features/problems]"
+
+### Consistency
+- Use language from existing documentation (README, etc.) to stay consistent
+- Be specific about what users "cannot" do today vs what they "need"
+- Give real-world use cases that anyone can understand
+
+### Resources
+- [Design docs - A design doc](https://www.industrialempathy.com/posts/design-doc-a-design-doc/)
+
 
 ## Go Development Guidelines
 
