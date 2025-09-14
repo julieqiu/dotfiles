@@ -12,28 +12,6 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # -----------------------------------
-# Oh-my-zsh
-# -----------------------------------
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Which plugins would you like to load?
-plugins=(
-  colored-man-pages
-  copyfile
-  copypath
-  emoji
-  emoji-clock
-  gcloud
-  git
-  gitignore
-  golang
-  httpie
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# -----------------------------------
 # PATH
 # -----------------------------------
 local code_dir=$HOME/code
