@@ -14,3 +14,5 @@
     recent-branches = branches --sort=-committerdate
 [init]
 	defaultBranch = main
+[core]
+	excludesfile = /Users/julieqiu/.gitignore_global
