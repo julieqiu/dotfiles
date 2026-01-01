@@ -12,7 +12,8 @@
 [alias]
     branches = branch --list --format='%(HEAD) %(align:width=13,position=left)%(committerdate:relative)%(end) %(align:width=30,position=left)%(if)%(HEAD)%(then)%(color:green)%(else)%(color:yellow)%(end)%(refname:short)%(color:reset)%(end) %(subject)'
     recent-branches = branches --sort=-committerdate
+	sync-main = "!f() { \\\n  git fetch upstream main && \\\n  git fetch origin main && \\\n  git checkout main && \\\n  git reset --hard upstream/main && \\\n  git push origin main --force; \\\n}; f"
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = /Users/julieqiu/.gitignore_global
+	excludesfile = /Users/julieqiu/.gitignore
