@@ -3,6 +3,11 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with
 code in this repository.
 
+## Formatting
+
+- Always run markdownfmt on markdown files
+- Always run yamlfmt on markdown files
+
 ## Writing Design Documents
 
 When writing design documents, follow these principles:
@@ -126,6 +131,40 @@ Use the format:
 When writing tests, follow the patterns below to ensure consistency,
 readability, and ease of debugging.
 
+#### Use t.Context()
+Always use `t.Context()` instead of `context.Background()` in tests. Inline the
+call directly without assigning to a variable.
+
+Example:
+```
+err := Run(t.Context(), []string{"cmd", "arg"})
+```
+
+#### Error handling
+Use `t.Fatal(err)` for simple error checks. Do not include descriptive messages
+like "failed to do X" - the error itself and test name provide sufficient
+context.
+
+Do not use:
+```
+t.Fatalf("Read() failed: %v", err)
+t.Errorf("Run() failed: %v", err)
+```
+
+Instead use:
+```
+t.Fatal(err)
+```
+
+#### Comments
+Avoid obvious comments in tests. The code should be self-explanatory. Remove
+comments that simply restate what the code does.
+
+#### Simplify test tables
+- Remove unnecessary fields from test structs
+- If all test cases have the same value for a field, inline that value instead
+- Merge fields that always have the same value (e.g., `language` and `wantLanguage`)
+
 #### Use cmp.Diff for comparisons
 Use go-cmp instead of reflect.DeepEqual for clearer diffs and better debugging.
 
@@ -179,7 +218,7 @@ func TestTransform(t *testing.T) {
 		t.Run(test.name, func(t *testing.T) {
 			got := Transform(test.input)
 			if diff := cmp.Diff(test.want, got); diff != "" {
-				t.Errorf("Transform() mismatch (-want +got):\n%s", diff)
+				t.Errorf("mismatch (-want +got):\n%s", diff)
 			}
 		})
 	}
