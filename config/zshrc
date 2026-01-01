@@ -1,3 +1,5 @@
+autoload -U compinit; compinit
+
 # -----------------------------------
 # Powerlevel10k
 # -----------------------------------
@@ -16,26 +18,28 @@ fi
 # -----------------------------------
 local code_dir=$HOME/code
 local homebrew_dir=$HOME/bin/homebrew
-local cloudsdk_dir=$HOME/bin/google-cloud-sdk
+local cloudsdk_dir=$HOME/code/google-cloud-sdk
 
-export PATH=$code_dir/bin:$PATH
-export PATH=$homebrew_dir/bin:$homebrew_dir/sbin:$homebrew_dir/opt/fzf/bin:$PATH
-export PATH=$HOME/go/current/bin:$code_dir/gotip/bin:$HOME/go/bin:$PATH
-export PATH=/Users/julieqiu/Library/Python/3.11/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
+# PATH precedence (first = highest priority):
+export PATH="\
+$HOME/.local/bin:\
+$code_dir/bin:\
+$cloudsdk_dir/bin:\
+$HOME/go/current/bin:\
+$code_dir/gotip/bin:\
+$HOME/go/bin:\
+$HOME/.cargo/bin:\
+$HOME/Library/Python/3.11/bin:\
+$homebrew_dir/bin:\
+$homebrew_dir/sbin:\
+$homebrew_dir/opt/fzf/bin:\
+$PATH"
 
 # -----------------------------------
 # Sourced Configs
 # -----------------------------------
-# Google Cloud SDK
-if [ -f "$cloudsdk_dir/path.zsh.inc" ]; then . "$cloudsdk_dir/path.zsh.inc"; fi
-if [ -f "$cloudsdk_dir/completion.zsh.inc" ]; then . "$cloudsdk_dir/completion.zsh.inc"; fi
-
-# Syntax highlighting and substring search
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  source $homebrew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source $homebrew_dir/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-fi
+source $homebrew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $homebrew_dir/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Custom dotfiles
 local dotfiles_dir=$code_dir/dotfiles
@@ -47,3 +51,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias pbcopy="xsel — clipboard — input"
   alias pbpaste="xsel — clipboard — output"
 fi
+
+# Google Cloud SDK completion
+if [ -f "$cloudsdk_dir/completion.zsh.inc" ]; then . "$cloudsdk_dir/completion.zsh.inc"; fi
