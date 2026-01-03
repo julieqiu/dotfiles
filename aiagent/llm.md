@@ -49,6 +49,8 @@ Use these sections in order:
 
 ## Go Development Guidelines
 
+**IMPORTANT: When writing, modifying, or reviewing Go code, always use the `gopherbot` agent (via the Task tool with subagent_type='gopherbot'). Only write Go code directly if the task is trivial (e.g., a single-line fix).**
+
 Follow these principles when writing Go code, based on Russ Cox's philosophy
 and the effective Go guidelines:
 

@@ -1,5 +1,5 @@
 ---
-name: go-developer
+name: gopherbot
 description: Go code writer and reviewer. Use this agent for all Go development tasks including writing new code, modifying existing code, and reviewing before commits.
 tools: Read, Edit, Write, Glob, Grep, Bash
 model: inherit
@@ -197,19 +197,36 @@ readability, and ease of debugging. See
 [Go Test Comments](https://go.dev/wiki/TestComments) for conventions around
 writing test code.
 
+### Error message capitalization
+
+Error messages (including test error messages) should start with lowercase, unless
+beginning with a proper noun, acronym, or identifier.
+
+```go
+// Good
+t.Errorf("expected error when file doesn't exist, but got %v", got)
+t.Errorf("GitHub API returned unexpected status: %v", err)
+t.Errorf("MyType.Field should not be nil")
+
+// Bad
+t.Errorf("Expected error when file doesn't exist, but got %v", got)
+t.Errorf("github API returned unexpected status: %v", err)
+```
+
+This follows the same convention as error values created with `fmt.Errorf` and
+`errors.New`.
+
 ### Use t.Fatal(err) for simple test handling
 
 Avoid verbose or redundant failure messages. If an error occurs, pass it directly
 to `t.Fatal` or `t.Error`. The testing package automatically includes the file
 and line number, and well-constructed errors already provide their own context.
 
-**Good**:
 ```go
+// Good
 t.Fatal(err)
-```
 
-**Bad**:
-```go
+// Bad
 t.Fatalf("failed: %v", err)
 ```
 
